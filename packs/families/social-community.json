@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "social-community",
+  "version": "0.1.0",
+  "family": "social_community",
+  "display_name": "Social work, counselling and community services",
+  "occupations": ["23-social-workers-counsellors-community-nonprofit-services"],
+  "capabilities": ["document_assistant", "voice_notes", "customer_conversation_practice", "source_backed_research"],
+  "supported_tasks": ["practice", "summarize", "draft", "research"],
+  "safety_notes": ["Do not diagnose, make safeguarding determinations or replace professional supervision.", "Keep client identity and sensitive case information protected."],
+  "required_connectors": ["documents", "audio", "web_sources"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

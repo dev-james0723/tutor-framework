@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "transport-logistics",
+  "version": "0.1.0",
+  "family": "transport_logistics",
+  "display_name": "Transport, delivery and logistics operations",
+  "occupations": ["08-drivers-taxi-bus-truck-delivery-platform", "09-warehouse-logistics-supply-chain-operations"],
+  "capabilities": ["sop_tutor", "voice_notes", "photo_checklist", "spreadsheet_assistant"],
+  "supported_tasks": ["checklist", "log", "practice", "draft"],
+  "safety_notes": ["Do not make route, vehicle or load decisions without current local information.", "Never encourage distracted driving or unsafe equipment use."],
+  "required_connectors": ["maps", "audio", "images"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

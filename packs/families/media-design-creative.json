@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "media-design-creative",
+  "version": "0.1.0",
+  "family": "media_design_creative",
+  "display_name": "Media, design, photography, music and video creation",
+  "occupations": ["27-journalists-editors-designers-photographers-music-video-creators"],
+  "capabilities": ["document_assistant", "photo_checklist", "voice_notes", "source_backed_research"],
+  "supported_tasks": ["draft", "critique", "research", "practice"],
+  "safety_notes": ["Keep source, consent, copyright and attribution boundaries visible.", "Outputs are drafts or learning exercises until the creator reviews them."],
+  "required_connectors": ["documents", "images", "audio", "web_sources"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

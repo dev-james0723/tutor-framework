@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "education-care-health",
+  "version": "0.1.0",
+  "family": "education_care_health",
+  "display_name": "Education, care and health services",
+  "occupations": ["15-teachers-tutors-vocational-educators", "16-nurses-caregivers-child-elderly-disability-care", "17-doctors-dentists-clinical-health-professionals", "18-pharmacists-laboratory-imaging-public-health-technicians"],
+  "capabilities": ["sop_tutor", "document_assistant", "source_backed_research", "voice_notes"],
+  "supported_tasks": ["teach", "practice", "summarize", "draft"],
+  "safety_notes": ["Educational support does not replace licensed clinical judgment or care plans.", "Escalate symptoms, emergencies, safeguarding concerns and medication questions."],
+  "required_connectors": ["documents", "web_sources", "audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

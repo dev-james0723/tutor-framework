@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "spreadsheet-assistant",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Spreadsheet assistant",
+  "occupations": ["common-spreadsheet-users"],
+  "capabilities": ["spreadsheets", "local_files"],
+  "supported_tasks": ["organize", "reconcile", "formula-practice", "summarize"],
+  "safety_notes": ["Show formulas, assumptions and units; never silently overwrite source data.", "Keep outputs as a proposed draft or a separate copy."],
+  "required_connectors": ["spreadsheets"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

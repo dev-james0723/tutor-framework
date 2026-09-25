@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Research candidates for occupation-specific extension; this registry is not an installer or authorization record.",
+  "skills": [
+    {
+      "skill_id": "document-workflows",
+      "occupation_families": ["office_business", "legal_government_public_safety", "education_care_health", "media_design_creative"],
+      "source": "local official/document skills: documents, docx, pdf, google-drive docs",
+      "candidate_skills": ["documents:documents", "anthropic-skills:docx", "anthropic-skills:pdf", "google-drive:google-docs"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "local document reading, drafting and citation; no send, filing or publication"
+    },
+    {
+      "skill_id": "spreadsheet-workflows",
+      "occupation_families": ["office_business", "finance_accounting", "transport_logistics", "technology_engineering_science"],
+      "source": "local official/spreadsheet skills: xlsx, google-drive sheets, spreadsheet runtime",
+      "candidate_skills": ["anthropic-skills:xlsx", "google-drive:google-sheets", "documents:documents"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "formula explanation and separate-copy drafts; no silent overwrite or financial authorization"
+    },
+    {
+      "skill_id": "visual-and-photo-checklists",
+      "occupation_families": ["agriculture_food", "trades_production", "retail_hospitality_services", "media_design_creative"],
+      "source": "local image-generation and visual-production skill candidates",
+      "candidate_skills": ["imagegen", "creative-production:produce", "cowart:cowart-image-edit"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "visible-evidence description and checklist; no hidden-condition or identity inference"
+    },
+    {
+      "skill_id": "audio-transcription-and-voice-notes",
+      "occupation_families": ["transport_logistics", "customer_sales_marketing", "social_community", "media_design_creative"],
+      "source": "local transcription and voice skill candidates",
+      "candidate_skills": ["chatcut-desktop:transcription", "chatcut-desktop:voice", "general-video"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "uncertainty-marked transcription and summaries; no automatic messages or scheduling"
+    },
+    {
+      "skill_id": "procedure-and-sop-tutoring",
+      "occupation_families": ["agriculture_food", "trades_production", "retail_hospitality_services", "education_care_health", "legal_government_public_safety"],
+      "source": "first-party pack contract plus document and research skill candidates",
+      "candidate_skills": ["anthropic-skills:program-notes", "documents:documents", "evidence-first-research-shortlist"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "teach supplied procedures and flag missing steps; qualified human supervision remains required"
+    },
+    {
+      "skill_id": "customer-conversation-practice",
+      "occupation_families": ["customer_sales_marketing", "retail_hospitality_services", "social_community"],
+      "source": "first-party reference workflow plus communication skill candidates",
+      "candidate_skills": ["email-best-practices", "anthropic-skills:docx", "chatcut-desktop:transcription"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "roleplay and draft critique only; no customer contact or invented policy"
+    },
+    {
+      "skill_id": "evidence-backed-research",
+      "occupation_families": ["all"],
+      "source": "local evidence-first research, anysearch and deep-research skill candidates",
+      "candidate_skills": ["anysearch", "evidence-first-research-shortlist", "deep-cultural-research"],
+      "status": "research_candidate",
+      "external_execution": false,
+      "audit_scope": "source anchors, citations and uncertainty; no unsupported professional advice"
+    },
+    {
+      "skill_id": "healthcare-domain-pack",
+      "occupation_families": ["education_care_health"],
+      "source": "domain-reviewed adapter required; no general-purpose approval implied",
+      "candidate_skills": [],
+      "status": "not_adopted",
+      "external_execution": false,
+      "audit_scope": "requires clinical, privacy and safeguarding review before candidate integration"
+    },
+    {
+      "skill_id": "legal-domain-pack",
+      "occupation_families": ["legal_government_public_safety"],
+      "source": "domain-reviewed adapter required; no general-purpose approval implied",
+      "candidate_skills": [],
+      "status": "not_adopted",
+      "external_execution": false,
+      "audit_scope": "requires jurisdiction, privilege, confidentiality and professional-responsibility review"
+    }
+  ]
+}

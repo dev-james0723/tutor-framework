@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "replace-me",
+  "version": "0.1.0",
+  "family": "replace-me",
+  "display_name": "Replace me",
+  "occupations": ["replace-me"],
+  "capabilities": ["documents"],
+  "supported_tasks": ["draft", "practice"],
+  "safety_notes": ["Keep outputs as drafts and require human review."],
+  "required_connectors": [],
+  "supported_locales": ["en"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

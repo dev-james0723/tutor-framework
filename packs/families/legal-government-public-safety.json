@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "legal-government-public-safety",
+  "version": "0.1.0",
+  "family": "legal_government_public_safety",
+  "display_name": "Legal, government, policing and emergency services",
+  "occupations": ["19-lawyers-legal-assistants-compliance-mediators", "20-civil-servants-government-policy-public-management", "21-police-law-enforcement-security-investigators", "22-firefighters-paramedics-emergency-disaster-response"],
+  "capabilities": ["document_assistant", "source_backed_research", "sop_tutor", "voice_notes"],
+  "supported_tasks": ["summarize", "draft", "practice", "checklist"],
+  "safety_notes": ["Outputs are drafts and research aids, never legal, enforcement or emergency command decisions.", "Protect confidential, privileged and safety-sensitive information and escalate immediately when required."],
+  "required_connectors": ["documents", "web_sources", "audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

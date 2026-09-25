@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "trades-production",
+  "version": "0.1.0",
+  "family": "trades_production",
+  "display_name": "Manufacturing, construction and maintenance trades",
+  "occupations": ["02-factory-production-food-processing", "03-construction-carpentry-finishing", "04-electrical-mechanical-automotive-home-repair"],
+  "capabilities": ["sop_tutor", "photo_checklist", "document_assistant"],
+  "supported_tasks": ["checklist", "troubleshoot", "practice", "draft"],
+  "safety_notes": ["Never infer that a hazardous task is safe to perform.", "Use local manuals and qualified supervision for physical work."],
+  "required_connectors": ["documents", "images"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

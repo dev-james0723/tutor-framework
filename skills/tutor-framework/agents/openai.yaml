@@ -1,0 +1,7 @@
+interface:
+  display_name: "Tutor Framework"
+  short_description: "Build evidence-grounded tutor workflows safely"
+  default_prompt: "Use $tutor-framework to design or extend an evidence-grounded tutor workflow with explicit review and external-action boundaries."
+
+policy:
+  allow_implicit_invocation: true

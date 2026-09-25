@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "voice-notes",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Voice notes",
+  "occupations": ["common-audio-users"],
+  "capabilities": ["audio"],
+  "supported_tasks": ["transcribe", "summarize", "extract-actions", "practice"],
+  "safety_notes": ["Mark uncertain transcription and speaker attribution.", "Do not send, publish or schedule extracted actions automatically."],
+  "required_connectors": ["audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

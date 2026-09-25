@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "office-business",
+  "version": "0.1.0",
+  "family": "office_business",
+  "display_name": "Office administration and small-business operations",
+  "occupations": ["10-administration-secretarial-clerical-data-entry", "14-managers-business-owners-small-business-entrepreneurs"],
+  "capabilities": ["document_assistant", "spreadsheet_assistant", "source_backed_research", "sop_tutor"],
+  "supported_tasks": ["draft", "organize", "summarize", "practice"],
+  "safety_notes": ["Keep drafts distinct from sent or filed records.", "Require confirmation before any account, payment or message action."],
+  "required_connectors": ["documents", "spreadsheets", "web_sources"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

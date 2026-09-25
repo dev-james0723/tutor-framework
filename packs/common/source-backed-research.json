@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "source-backed-research",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Source-backed research",
+  "occupations": ["common-research-users"],
+  "capabilities": ["web_sources", "documents"],
+  "supported_tasks": ["research", "compare", "summarize", "draft"],
+  "safety_notes": ["Cite source anchors and separate facts, inferences and open questions.", "Do not present research aids as legal, medical, financial or policy advice."],
+  "required_connectors": ["web_sources"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

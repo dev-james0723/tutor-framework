@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "photo-checklist",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Photo checklist",
+  "occupations": ["common-image-users"],
+  "capabilities": ["images"],
+  "supported_tasks": ["inspect", "checklist", "compare"],
+  "safety_notes": ["Describe visible evidence and uncertainty; do not identify people or infer hidden conditions without permission and evidence.", "Escalate physical or medical hazards."],
+  "required_connectors": ["images"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

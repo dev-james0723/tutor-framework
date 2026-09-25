@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "sop-tutor",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "SOP tutor",
+  "occupations": ["common-procedure-users"],
+  "capabilities": ["documents", "images", "audio"],
+  "supported_tasks": ["teach", "checklist", "practice", "summarize"],
+  "safety_notes": ["Use the supplied procedure as the source of truth and flag missing steps.", "Physical, regulated or emergency procedures require qualified human supervision."],
+  "required_connectors": ["documents"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

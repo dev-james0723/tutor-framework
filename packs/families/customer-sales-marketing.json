@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "customer-sales-marketing",
+  "version": "0.1.0",
+  "family": "customer_sales_marketing",
+  "display_name": "Customer service, sales and marketing",
+  "occupations": ["11-customer-service-call-center-frontline-support", "12-sales-marketing-real-estate-insurance-advisers"],
+  "capabilities": ["customer_conversation_practice", "document_assistant", "source_backed_research", "voice_notes"],
+  "supported_tasks": ["practice", "draft", "summarize", "research"],
+  "safety_notes": ["Treat outputs as conversation practice or drafts, not promises to customers.", "Do not invent prices, policy terms, coverage or eligibility."],
+  "required_connectors": ["documents", "web_sources", "audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

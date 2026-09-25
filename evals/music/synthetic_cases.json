@@ -1,0 +1,12 @@
+[
+  {
+    "case_id": "public-synthetic-scale",
+    "synthetic": true,
+    "description": "Two-measure C-D-rest-E-sharp example for public contract tests.",
+    "expected": {
+      "measure_count": 2,
+      "note_count": 4,
+      "opening_pitch": "C4"
+    }
+  }
+]

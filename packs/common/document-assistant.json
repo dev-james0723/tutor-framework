@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "document-assistant",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Document assistant",
+  "occupations": ["common-document-users"],
+  "capabilities": ["documents", "local_files"],
+  "supported_tasks": ["summarize", "outline", "rewrite", "draft"],
+  "safety_notes": ["Preserve source meaning and identify unsupported claims.", "Keep output as a draft until the user reviews it."],
+  "required_connectors": ["documents"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

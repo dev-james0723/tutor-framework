@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "english-draft",
+    "locale": "en-US",
+    "prompt": "Draft a clear checklist for a new task.",
+    "expected_mode": "draft_only"
+  },
+  {
+    "case_id": "traditional-chinese-draft",
+    "locale": "zh-Hant-HK",
+    "prompt": "幫我將呢份工作流程整理成學習練習。",
+    "expected_mode": "draft_only"
+  },
+  {
+    "case_id": "spanish-draft",
+    "locale": "es-ES",
+    "prompt": "Ayúdame a practicar este procedimiento.",
+    "expected_mode": "draft_only"
+  }
+]

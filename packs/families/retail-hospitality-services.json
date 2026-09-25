@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "retail-hospitality-services",
+  "version": "0.1.0",
+  "family": "retail_hospitality_services",
+  "display_name": "Retail, hospitality and property services",
+  "occupations": ["05-retail-cashier-store-operations", "06-cooking-serving-coffee-hotel-frontline", "07-cleaning-household-gardening-property-maintenance"],
+  "capabilities": ["customer_conversation_practice", "photo_checklist", "sop_tutor", "spreadsheet_assistant"],
+  "supported_tasks": ["practice", "checklist", "log", "draft"],
+  "safety_notes": ["Keep customer and workplace data private.", "Escalate food, chemical, lifting and other physical hazards."],
+  "required_connectors": ["images", "documents"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

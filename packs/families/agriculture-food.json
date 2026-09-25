@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "agriculture-food",
+  "version": "0.1.0",
+  "family": "agriculture_food",
+  "display_name": "Agriculture, food and natural resources",
+  "occupations": ["01-farming-livestock-fisheries-forestry"],
+  "capabilities": ["voice_notes", "photo_checklist", "sop_tutor"],
+  "supported_tasks": ["checklist", "log", "practice", "draft"],
+  "safety_notes": ["Do not replace local safety, veterinary, environmental or food-handling rules.", "Escalate physical hazards and uncertain conditions."],
+  "required_connectors": ["images", "audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}

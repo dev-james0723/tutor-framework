@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "customer-conversation-practice",
+  "version": "0.1.0",
+  "family": "common_workflow",
+  "display_name": "Customer conversation practice",
+  "occupations": ["common-customer-facing-users"],
+  "capabilities": ["documents", "audio"],
+  "supported_tasks": ["roleplay", "practice", "draft", "critique"],
+  "safety_notes": ["Roleplay outputs are practice material, not messages sent to customers.", "Do not invent policy, pricing, eligibility, coverage or commitments."],
+  "required_connectors": ["documents", "audio"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "common"
+}

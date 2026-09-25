@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Tutor Framework evidence flow</title>
+  <desc id="desc">A source artifact becomes grounded claims, a reviewable draft, and only then an explicitly consented action.</desc>
+  <rect width="1200" height="420" rx="28" fill="#101827"/>
+  <text x="60" y="70" fill="#f8fafc" font-family="Arial, sans-serif" font-size="34" font-weight="700">Tutor Framework</text>
+  <text x="60" y="108" fill="#a9b6c9" font-family="Arial, sans-serif" font-size="20">Evidence first · reviewable drafts · explicit action boundaries</text>
+  <g font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">
+    <rect x="55" y="175" width="230" height="105" rx="18" fill="#24456e"/>
+    <text x="170" y="235" fill="#ffffff">Source artifact</text>
+    <rect x="345" y="175" width="230" height="105" rx="18" fill="#146c68"/>
+    <text x="460" y="235" fill="#ffffff">Grounded claims</text>
+    <rect x="635" y="175" width="230" height="105" rx="18" fill="#76552a"/>
+    <text x="750" y="235" fill="#ffffff">Reviewable draft</text>
+    <rect x="925" y="175" width="220" height="105" rx="18" fill="#5c347a"/>
+    <text x="1035" y="220" fill="#ffffff">Consent +</text>
+    <text x="1035" y="248" fill="#ffffff">explicit action</text>
+  </g>
+  <g stroke="#f4c95d" stroke-width="8" stroke-linecap="round" fill="none">
+    <path d="M295 228h35"/><path d="M585 228h35"/><path d="M875 228h35"/>
+  </g>
+  <g fill="#a9b6c9" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">
+    <text x="170" y="325">preserve the original</text>
+    <text x="460" y="325">confidence + provenance</text>
+    <text x="750" y="325">human/domain review</text>
+    <text x="1035" y="325">never implied by preview</text>
+  </g>
+</svg>

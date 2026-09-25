@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "finance-accounting",
+  "version": "0.1.0",
+  "family": "finance_accounting",
+  "display_name": "Accounting, bookkeeping, audit and financial administration",
+  "occupations": ["13-accounting-bookkeeping-audit-financial-administration"],
+  "capabilities": ["spreadsheet_assistant", "document_assistant", "source_backed_research"],
+  "supported_tasks": ["reconcile", "summarize", "draft", "practice"],
+  "safety_notes": ["Keep calculations auditable and show assumptions.", "Do not present generated content as financial, tax or audit advice."],
+  "required_connectors": ["spreadsheets", "documents", "web_sources"],
+  "supported_locales": ["en", "zh-Hant", "es"],
+  "external_writes": false,
+  "execution_mode": "draft_only",
+  "status": "reference"
+}
