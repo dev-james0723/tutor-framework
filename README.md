@@ -28,6 +28,7 @@ Python 3.11+ is required. `pytest` is optional.
 - A deterministic `TutorEngine`, fail-closed policies, occupation routing, connector interfaces, and draft-only pack manifests.
 - Twelve occupation families covering the supplied global occupation guide, seven reusable workflows, and public synthetic fixtures.
 - A narrow MusicXML score-literacy slice that demonstrates domain-specific extension without claiming full optical music recognition.
+- Provider-neutral lecture-audio contracts for timestamped speech/music regions, piece identification before AMT when a work is unknown, note hypotheses, known-score alignment, and explicitly provisional score reconstruction.
 - A third-party skill adoption registry and security/licensing guidance.
 
 ### Safety and scope

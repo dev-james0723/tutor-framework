@@ -3,7 +3,7 @@ name: tutor-framework
 description: "Build or extend platform-neutral, evidence-grounded tutor systems for many occupations while preserving provenance, review, consent, and external-action boundaries."
 license: "Apache-2.0"
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   runtime: "Python 3.11+"
 ---
 
@@ -65,6 +65,28 @@ source anchors; it does not claim complete OMR, performance evaluation, or
 professional music instruction. See
 `skills/tutor-framework/references/music-score-literacy.md` and
 `src/tutor_framework/domains/music/score.py`.
+
+## Music lecture audio and score alignment
+
+When a lecture recording contains musical demonstrations, treat those spans as
+first-class evidence rather than transcript filler. Use
+`src/tutor_framework/domains/music/audio.py` for the provider-neutral contracts
+and read
+`skills/tutor-framework/references/music-audio-score-alignment.md`.
+
+- preserve timestamped speech, music, speech-over-music, silence/noise, and unknown regions;
+- when the work is unknown, run PieceIdentifier before note-level AMT and keep context/fingerprint/semantic matches reviewable;
+- prefer alignment to a known score before reconstructing notation;
+- keep automatic note recognition as hypotheses with per-event confidence;
+- only build provisional ScoreIR from explicit quantized measure/beat evidence;
+- never promote an audio reconstruction to confirmed score evidence by itself;
+- preserve instructor interpretation, audio-derived evidence, verified score
+  evidence, and tutor analysis as separate provenance layers;
+- fail closed when a segmentation/transcription/alignment runtime is missing or
+  unclear.
+
+Concrete ML/audio libraries stay optional behind adapter protocols. Their presence
+never implies permission to upload private recordings or use paid providers.
 
 ## Third-party skills
 

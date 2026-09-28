@@ -24,9 +24,9 @@ policies.
 5. **Public packs** — declarative manifests in `packs/`. They describe occupations,
    tasks, capabilities, locales, safety notes and execution mode. They do not
    install or authorize tools.
-6. **Domain slices and examples** — MusicXML/ScoreIR is the first vertical slice;
-   office, customer service, education and creative examples are intentionally
-   draft or learning exercises.
+6. **Domain slices and examples** — MusicXML/ScoreIR and lecture-audio/score
+   intelligence are music-domain slices; office, customer service, education and
+   creative examples are intentionally draft or learning exercises.
 
 ## Evidence flow
 
@@ -39,6 +39,21 @@ artifact -> reader -> canonical IR -> deterministic verification
 An external adapter may be offered at a boundary, but the core only consumes its
 typed result. OMR is therefore an optional interface; absence of an OMR runtime is
 an explicit unavailable state rather than a guessed score.
+
+For lecture audio, the music-domain path is similarly adapter-based:
+
+```text
+lecture audio -> timestamped speech/music segmentation
+              -> unknown work? -> PieceIdentifier -> candidate work/excerpt
+              -> candidate/known work -> score retrieval/context
+              -> known score? -> score alignment -> measure/beat anchors
+              -> otherwise/supplement -> note hypotheses -> provisional reconstruction
+              -> review/provenance -> teaching analysis
+```
+
+When the work is unknown, piece identification precedes note-level AMT so the tutor can attempt a stronger known-score route. Known-score alignment is preferred before reconstruction. Piece-identity candidates and audio-derived note hypotheses remain distinct from verified score evidence and from an instructor's
+interpretation. Low-confidence or unclear polyphonic regions remain ambiguous or
+review-required rather than being promoted to facts.
 
 ## Safety flow
 
@@ -60,3 +75,6 @@ writes.
 - Keep every material claim supportable and anchored.
 - Prefer unavailable or review-required states over inferred capability or authority.
 - Add a synthetic, non-sensitive fixture before adding a provider integration.
+- Keep heavy audio/ML libraries outside the framework's required dependencies;
+  implement them behind the music audio adapter protocols and preserve their
+  backend/version/provenance in concrete integrations.
