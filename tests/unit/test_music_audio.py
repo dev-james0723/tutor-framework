@@ -7,6 +7,9 @@ from tutor_framework.domains.music import (
     AudioRegionKind,
     AudioTranscriptionResult,
     EvidenceConfidence,
+    PieceIdentificationCandidate,
+    PieceIdentificationMethod,
+    PieceIdentificationResult,
     QuantizedAudioNote,
     ScoreAlignmentResult,
     ScoreTimeAnchor,
@@ -79,9 +82,84 @@ class MusicAudioTests(unittest.TestCase):
         self.assertEqual(analysis.regions, ())
         self.assertIn("RuntimeError", analysis.unresolved_gaps[0])
 
+    def test_unknown_piece_identification_runs_before_amt(self):
+        events = []
+
+        class Identifier:
+            def identify(self, audio_ref, region, context=None):
+                events.append("identify")
+                return PieceIdentificationResult(
+                    True,
+                    candidates=(
+                        PieceIdentificationCandidate(
+                            title="Synthetic Lecture Piece",
+                            composer="Test Composer",
+                            movement="I",
+                            confidence=0.84,
+                            provider="synthetic-identifier",
+                            method=PieceIdentificationMethod.SEMANTIC,
+                        ),
+                    ),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-identifier",
+                )
+
+        class Transcriber:
+            def transcribe(self, audio_ref, region):
+                events.append("transcribe")
+                return AudioTranscriptionResult(
+                    True,
+                    notes=(AudioNoteEvent(60, 4.0, 5.0, 0.90),),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-amt",
+                )
+
+        analysis = analyze_lecture_audio(
+            "audio://unknown",
+            artifact_id="lecture-unknown",
+            segmenter=Segmenter(regions("audio://unknown")),
+            context={"course": "synthetic"},
+            piece_identifier=Identifier(),
+            transcriber=Transcriber(),
+        )
+        music = analysis.music_regions[0]
+        self.assertEqual(events, ["identify", "transcribe"])
+        self.assertTrue(music.piece_identification.available)
+        self.assertEqual(
+            music.piece_identification.candidates[0].method,
+            PieceIdentificationMethod.SEMANTIC,
+        )
+        self.assertNotEqual(
+            music.piece_identification.confidence,
+            EvidenceConfidence.CONFIRMED,
+        )
+
+    def test_semantic_identifier_cannot_claim_confirmation_by_itself(self):
+        with self.assertRaises(ValueError):
+            PieceIdentificationResult(
+                True,
+                candidates=(
+                    PieceIdentificationCandidate(
+                        title="Synthetic",
+                        confidence=0.99,
+                        provider="semantic-fixture",
+                        method=PieceIdentificationMethod.SEMANTIC,
+                    ),
+                ),
+                confidence=EvidenceConfidence.CONFIRMED,
+            )
+
     def test_known_score_alignment_runs_before_transcription_and_blocks_reconstruction(self):
         events = []
         score = read_musicxml(SCORE, artifact_id="known-score")
+
+        class Identifier:
+            def identify(self, audio_ref, region, context=None):
+                events.append("identify")
+                return PieceIdentificationResult(
+                    False,
+                    reason="should not run when known score is supplied",
+                )
 
         class Aligner:
             def align(self, audio_ref, region, known_score):
@@ -107,6 +185,7 @@ class MusicAudioTests(unittest.TestCase):
             "audio://known",
             artifact_id="lecture-known",
             segmenter=Segmenter(regions("audio://known")),
+            piece_identifier=Identifier(),
             known_score=score,
             aligner=Aligner(),
             transcriber=Transcriber(),

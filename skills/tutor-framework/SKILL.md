@@ -74,8 +74,8 @@ first-class evidence rather than transcript filler. Use
 and read
 `skills/tutor-framework/references/music-audio-score-alignment.md`.
 
-- preserve timestamped speech, music, speech-over-music, silence/noise, and
-  unknown regions;
+- preserve timestamped speech, music, speech-over-music, silence/noise, and unknown regions;
+- when the work is unknown, run PieceIdentifier before note-level AMT and keep context/fingerprint/semantic matches reviewable;
 - prefer alignment to a known score before reconstructing notation;
 - keep automatic note recognition as hypotheses with per-event confidence;
 - only build provisional ScoreIR from explicit quantized measure/beat evidence;

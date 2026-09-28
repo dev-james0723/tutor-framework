@@ -3,14 +3,14 @@
 Date: 2026-09-28
 Branch: feat/caplin-audio-score-listener
 
-1. Add src/tutor_framework/domains/music/audio.py with validated models,
-   confidence states, adapter protocols, known-score-first orchestration, and
-   provisional ScoreIR reconstruction.
+1. Add src/tutor_framework/domains/music/audio.py with validated models, confidence states, adapter protocols, **piece-identification-before-AMT routing for unknown works**, known-score-first alignment, and provisional ScoreIR reconstruction.
 2. Export the public API and add unit tests plus a synthetic lecture-audio eval.
 3. Document the evidence pipeline in architecture and Tutor Framework skill
    references; keep heavy ML/audio dependencies optional.
 4. Update CAPLIN V3 from 3.0.0 to 3.1.0:
    - new lecture-audio-score-listener reference;
+   - unknown-work PieceIdentifier before AMT;
+   - optional, explicit-opt-in Google Gemini semantic identifier for short excerpts; never pretend Sound Search/Now Playing is a public third-party API;
    - Learn-mode speech/music routing;
    - four provenance layers;
    - low-confidence review queue;

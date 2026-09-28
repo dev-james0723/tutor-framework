@@ -9,13 +9,12 @@ spoken explanation and musical demonstration.
 2. Segment the timeline into speech, music, speech-over-music, silence/noise, or
    unknown regions. Every region keeps start/end timestamps.
 3. Never replace a musical passage with only a generic "[music]" marker.
-4. If the work/score is known, attempt score alignment first and create
-   audio-time → measure/beat anchors.
-5. Automatic music transcription (AMT) may add note hypotheses. Treat pitch,
+4. If the work is unknown, run PieceIdentifier before note-level AMT and preserve context/fingerprint/semantic candidates with confidence/provenance.
+5. If the work/score is known, attempt score alignment first and create audio-time → measure/beat anchors.
+6. Automatic music transcription (AMT) may add note hypotheses. Treat pitch,
    onset, offset, voice, rhythm, and chord estimates as reviewable evidence.
-6. Only reconstruct a provisional ScoreIR when measure/beat quantization already
-   exists. Do not invent barlines, rests, meter, voices, or missing notes.
-7. Send ambiguous/polyphonic/low-confidence passages to human review.
+7. Only reconstruct a provisional ScoreIR when measure/beat quantization already exists. Do not invent barlines, rests, meter, voices, or missing notes.
+8. Send ambiguous/polyphonic/low-confidence passages to human review.
 
 ## Provenance
 
@@ -31,8 +30,9 @@ become a verified score merely because it looks plausible.
 
 ## Adapter contract
 
-The public framework stays dependency-free. Concrete runtimes plug into
-AudioSegmenter, AudioTranscriber, ScoreAligner, or ScoreReconstructor.
+The public framework stays dependency-free. Concrete runtimes plug into AudioSegmenter, PieceIdentifier, AudioTranscriber, ScoreAligner, or ScoreReconstructor.
+
+Google Sound Search / Pixel Now Playing should not be represented as a public third-party API. A CAPLIN integration may optionally use the documented Gemini audio-understanding API as semantic PieceIdentifier evidence, but that external route stays disabled by default and cannot confirm score identity by itself.
 
 Useful local implementations may include:
 

@@ -44,13 +44,14 @@ For lecture audio, the music-domain path is similarly adapter-based:
 
 ```text
 lecture audio -> timestamped speech/music segmentation
+              -> unknown work? -> PieceIdentifier -> candidate work/excerpt
+              -> candidate/known work -> score retrieval/context
               -> known score? -> score alignment -> measure/beat anchors
-              -> otherwise -> note hypotheses -> provisional reconstruction
+              -> otherwise/supplement -> note hypotheses -> provisional reconstruction
               -> review/provenance -> teaching analysis
 ```
 
-Known-score alignment is preferred before reconstruction. Audio-derived note
-hypotheses remain distinct from verified score evidence and from an instructor's
+When the work is unknown, piece identification precedes note-level AMT so the tutor can attempt a stronger known-score route. Known-score alignment is preferred before reconstruction. Piece-identity candidates and audio-derived note hypotheses remain distinct from verified score evidence and from an instructor's
 interpretation. Low-confidence or unclear polyphonic regions remain ambiguous or
 review-required rather than being promoted to facts.
 

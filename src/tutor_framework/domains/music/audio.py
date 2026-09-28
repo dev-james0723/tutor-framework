@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Protocol, runtime_checkable
+from typing import Mapping, Protocol, runtime_checkable
 
 from .score import MeasureIR, NoteIR, PitchIR, ScoreIR
 
@@ -27,6 +27,12 @@ class EvidenceConfidence(str, Enum):
     PROBABLE = "probable"
     AMBIGUOUS = "ambiguous"
     REQUIRES_HUMAN_REVIEW = "requires_human_review"
+
+
+class PieceIdentificationMethod(str, Enum):
+    CONTEXT = "context"
+    FINGERPRINT = "fingerprint"
+    SEMANTIC = "semantic"
 
 
 @dataclass(frozen=True)
@@ -56,6 +62,51 @@ class TimedAudioRegion:
     @property
     def contains_music(self) -> bool:
         return self.kind in {AudioRegionKind.MUSIC, AudioRegionKind.SPEECH_OVER_MUSIC}
+
+
+@dataclass(frozen=True)
+class PieceIdentificationCandidate:
+    title: str
+    confidence: float
+    provider: str
+    method: PieceIdentificationMethod
+    composer: str | None = None
+    movement: str | None = None
+    recording: str | None = None
+    external_id: str | None = None
+
+    def __post_init__(self) -> None:
+        _require_text("title", self.title)
+        _require_probability(self.confidence, "confidence")
+        _require_text("provider", self.provider)
+        if not isinstance(self.method, PieceIdentificationMethod):
+            raise TypeError("method must be a PieceIdentificationMethod")
+        for name in ("composer", "movement", "recording", "external_id"):
+            value = getattr(self, name)
+            if value is not None:
+                _require_text(name, value)
+
+
+@dataclass(frozen=True)
+class PieceIdentificationResult:
+    available: bool
+    candidates: tuple[PieceIdentificationCandidate, ...] = ()
+    confidence: EvidenceConfidence = EvidenceConfidence.REQUIRES_HUMAN_REVIEW
+    backend: str = ""
+    reason: str = ""
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "candidates", tuple(self.candidates))
+        if not all(isinstance(item, PieceIdentificationCandidate) for item in self.candidates):
+            raise TypeError("candidates must contain PieceIdentificationCandidate models")
+        if not isinstance(self.confidence, EvidenceConfidence):
+            raise TypeError("confidence must be an EvidenceConfidence")
+        if self.available and not self.candidates:
+            raise ValueError("available piece identification must contain candidates")
+        if self.confidence is EvidenceConfidence.CONFIRMED and all(
+            item.method is PieceIdentificationMethod.SEMANTIC for item in self.candidates
+        ):
+            raise ValueError("semantic piece identification cannot be confirmed by itself")
 
 
 @dataclass(frozen=True)
@@ -179,6 +230,7 @@ class ScoreReconstructionResult:
 @dataclass(frozen=True)
 class MusicRegionAnalysis:
     region: TimedAudioRegion
+    piece_identification: PieceIdentificationResult | None = None
     transcription: AudioTranscriptionResult | None = None
     alignment: ScoreAlignmentResult | None = None
     reconstruction: ScoreReconstructionResult | None = None
@@ -188,6 +240,10 @@ class MusicRegionAnalysis:
     def __post_init__(self) -> None:
         if not self.region.contains_music:
             raise ValueError("MusicRegionAnalysis requires a music-containing region")
+        if self.piece_identification is not None and not isinstance(
+            self.piece_identification, PieceIdentificationResult
+        ):
+            raise TypeError("piece_identification must be a PieceIdentificationResult")
         object.__setattr__(self, "unresolved", tuple(self.unresolved))
         if not isinstance(self.review_state, EvidenceConfidence):
             raise TypeError("review_state must be an EvidenceConfidence")
@@ -220,6 +276,16 @@ class LectureAudioAnalysis:
 @runtime_checkable
 class AudioSegmenter(Protocol):
     def segment(self, audio_ref: str) -> tuple[TimedAudioRegion, ...]: ...
+
+
+@runtime_checkable
+class PieceIdentifier(Protocol):
+    def identify(
+        self,
+        audio_ref: str,
+        region: TimedAudioRegion,
+        context: Mapping[str, str] | None = None,
+    ) -> PieceIdentificationResult: ...
 
 
 @runtime_checkable
@@ -326,6 +392,8 @@ def analyze_lecture_audio(
     *,
     artifact_id: str,
     segmenter: AudioSegmenter,
+    context: Mapping[str, str] | None = None,
+    piece_identifier: PieceIdentifier | None = None,
     known_score: ScoreIR | None = None,
     aligner: ScoreAligner | None = None,
     transcriber: AudioTranscriber | None = None,
@@ -363,9 +431,22 @@ def analyze_lecture_audio(
             continue
 
         unresolved: list[str] = []
+        piece_identification: PieceIdentificationResult | None = None
         alignment: ScoreAlignmentResult | None = None
         transcription: AudioTranscriptionResult | None = None
         reconstruction: ScoreReconstructionResult | None = None
+
+        # When no authoritative score is already known, identify the work before
+        # asking AMT to infer individual notes. This lets callers retrieve a score
+        # and run a stronger alignment path on a subsequent pass.
+        if known_score is None and piece_identifier is not None:
+            piece_identification = _safe_identify(
+                piece_identifier, audio_ref, region, context
+            )
+            if not piece_identification.available:
+                unresolved.append(
+                    piece_identification.reason or "piece identification unavailable"
+                )
 
         if known_score is not None:
             if aligner is None:
@@ -408,6 +489,7 @@ def analyze_lecture_audio(
         music_analyses.append(
             MusicRegionAnalysis(
                 region=region,
+                piece_identification=piece_identification,
                 transcription=transcription,
                 alignment=alignment,
                 reconstruction=reconstruction,
@@ -426,6 +508,26 @@ def analyze_lecture_audio(
         music_regions=tuple(music_analyses),
         unresolved_gaps=tuple(global_gaps),
     )
+
+
+def _safe_identify(
+    identifier: PieceIdentifier,
+    audio_ref: str,
+    region: TimedAudioRegion,
+    context: Mapping[str, str] | None,
+) -> PieceIdentificationResult:
+    try:
+        result = identifier.identify(audio_ref, region, context)
+    except Exception as exc:
+        return PieceIdentificationResult(
+            False,
+            reason=f"piece identification adapter unavailable: {type(exc).__name__}",
+        )
+    if not isinstance(result, PieceIdentificationResult):
+        return PieceIdentificationResult(
+            False, reason="piece identifier returned an invalid result"
+        )
+    return result
 
 
 def _safe_align(
