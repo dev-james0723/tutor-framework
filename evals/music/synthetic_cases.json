@@ -8,5 +8,20 @@
       "note_count": 4,
       "opening_pitch": "C4"
     }
+  },
+  {
+    "case_id": "public-synthetic-lecture-audio",
+    "synthetic": true,
+    "description": "Synthetic lecture timeline with one speech span followed by one music demonstration; no real student or copyrighted recording is included.",
+    "regions": [
+      {"kind": "speech", "start_seconds": 0.0, "end_seconds": 4.0},
+      {"kind": "music", "start_seconds": 4.0, "end_seconds": 8.0}
+    ],
+    "expected": {
+      "music_regions": 1,
+      "known_score_first": true,
+      "audio_hypotheses_are_verified_score_facts": false,
+      "reconstruction_status": "requires_human_review"
+    }
   }
 ]
