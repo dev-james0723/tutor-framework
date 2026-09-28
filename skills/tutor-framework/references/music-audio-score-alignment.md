@@ -9,12 +9,13 @@ spoken explanation and musical demonstration.
 2. Segment the timeline into speech, music, speech-over-music, silence/noise, or
    unknown regions. Every region keeps start/end timestamps.
 3. Never replace a musical passage with only a generic "[music]" marker.
-4. If the work is unknown, run PieceIdentifier before note-level AMT and preserve context/fingerprint/semantic candidates with confidence/provenance.
-5. If the work/score is known, attempt score alignment first and create audio-time → measure/beat anchors.
+4. If the work is unknown, run PieceIdentifier before note-level AMT and preserve context/fingerprint/semantic candidates with confidence/provenance. A semantic-only candidate is not promotable until independently corroborated.
+5. If the work/score is known, attempt score alignment first and create audio-time → measure/beat candidate anchors. `available` means the adapter returned evidence; only a corroborated, threshold-clearing `promotable` alignment may support measure/beat promotion.
 6. Automatic music transcription (AMT) may add note hypotheses. Treat pitch,
-   onset, offset, voice, rhythm, and chord estimates as reviewable evidence.
-7. Only reconstruct a provisional ScoreIR when measure/beat quantization already exists. Do not invent barlines, rests, meter, voices, or missing notes.
-8. Send ambiguous/polyphonic/low-confidence passages to human review.
+   onset, offset, voice, rhythm, and chord estimates as reviewable evidence. Emitting many notes is not itself confidence; an adapter without calibrated note confidence remains review-required.
+7. Long automatic music regions may contain merged lecture examples. Preserve the detector span and review/split it with explicit timestamp overrides rather than silently treating the region as one excerpt.
+8. Only reconstruct a provisional ScoreIR when measure/beat quantization already exists. Do not invent barlines, rests, meter, voices, or missing notes.
+9. Send ambiguous/polyphonic/low-confidence passages, uncorroborated identities, and below-threshold/conflicting alignments to human review.
 
 ## Provenance
 

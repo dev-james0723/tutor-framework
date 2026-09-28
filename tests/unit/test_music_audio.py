@@ -243,6 +243,127 @@ class MusicAudioTests(unittest.TestCase):
         self.assertEqual(lecture["expected"]["music_regions"], 1)
         self.assertEqual(lecture["expected"]["reconstruction_status"], "requires_human_review")
 
+    def test_semantic_only_identity_keeps_region_in_human_review(self):
+        class Identifier:
+            def identify(self, audio_ref, region, context=None):
+                return PieceIdentificationResult(
+                    True,
+                    candidates=(
+                        PieceIdentificationCandidate(
+                            title="Wrong but plausible",
+                            confidence=0.97,
+                            provider="semantic-provider",
+                            method=PieceIdentificationMethod.SEMANTIC,
+                        ),
+                    ),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="semantic-provider",
+                )
+
+        class Transcriber:
+            def transcribe(self, audio_ref, region):
+                return AudioTranscriptionResult(
+                    True,
+                    notes=(AudioNoteEvent(60, 4.0, 5.0, 0.95),),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-amt",
+                )
+
+        analysis = analyze_lecture_audio(
+            "audio://semantic-only",
+            artifact_id="semantic-only",
+            segmenter=Segmenter(regions("audio://semantic-only")),
+            piece_identifier=Identifier(),
+            transcriber=Transcriber(),
+        )
+        music = analysis.music_regions[0]
+        self.assertFalse(music.piece_identification.promotable)
+        self.assertEqual(
+            music.review_state,
+            EvidenceConfidence.REQUIRES_HUMAN_REVIEW,
+        )
+
+    def test_weak_alignment_with_anchors_does_not_block_provisional_reconstruction(self):
+        score = read_musicxml(SCORE, artifact_id="known-score")
+        note = AudioNoteEvent(60, 4.0, 5.0, 0.95)
+
+        class Aligner:
+            def align(self, audio_ref, region, known_score):
+                return ScoreAlignmentResult(
+                    True,
+                    anchors=(ScoreTimeAnchor(4.0, "1", 1.0, 0.90),),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-aligner",
+                    match_score=0.60,
+                    promotion_threshold=0.65,
+                    corroborated=True,
+                )
+
+        class Transcriber:
+            def transcribe(self, audio_ref, region):
+                return AudioTranscriptionResult(
+                    True,
+                    notes=(note,),
+                    quantized_notes=(QuantizedAudioNote(note, "1", 1.0, 480),),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-amt",
+                )
+
+        analysis = analyze_lecture_audio(
+            "audio://weak-align",
+            artifact_id="weak-align",
+            segmenter=Segmenter(regions("audio://weak-align")),
+            known_score=score,
+            aligner=Aligner(),
+            transcriber=Transcriber(),
+        )
+        music = analysis.music_regions[0]
+        self.assertTrue(music.alignment.available)
+        self.assertFalse(music.alignment.promotable)
+        self.assertIsNotNone(music.provisional_score)
+        self.assertEqual(
+            music.review_state,
+            EvidenceConfidence.REQUIRES_HUMAN_REVIEW,
+        )
+
+    def test_overlong_music_region_is_review_gated_as_possible_merge(self):
+        audio_ref = "audio://long-region"
+        long_regions = (
+            TimedAudioRegion(
+                "music-long",
+                0.0,
+                64.0,
+                AudioRegionKind.MUSIC,
+                0.98,
+                audio_ref,
+            ),
+        )
+
+        class Transcriber:
+            def transcribe(self, audio_ref, region):
+                return AudioTranscriptionResult(
+                    True,
+                    notes=(AudioNoteEvent(60, 1.0, 2.0, 0.95),),
+                    confidence=EvidenceConfidence.PROBABLE,
+                    backend="synthetic-amt",
+                )
+
+        analysis = analyze_lecture_audio(
+            audio_ref,
+            artifact_id="long-region",
+            segmenter=Segmenter(long_regions),
+            transcriber=Transcriber(),
+            max_music_region_seconds=45.0,
+        )
+        music = analysis.music_regions[0]
+        self.assertTrue(
+            any("possible merged examples" in item for item in music.unresolved)
+        )
+        self.assertEqual(
+            music.review_state,
+            EvidenceConfidence.REQUIRES_HUMAN_REVIEW,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

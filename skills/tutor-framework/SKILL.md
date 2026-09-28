@@ -75,9 +75,10 @@ and read
 `skills/tutor-framework/references/music-audio-score-alignment.md`.
 
 - preserve timestamped speech, music, speech-over-music, silence/noise, and unknown regions;
-- when the work is unknown, run PieceIdentifier before note-level AMT and keep context/fingerprint/semantic matches reviewable;
-- prefer alignment to a known score before reconstructing notation;
-- keep automatic note recognition as hypotheses with per-event confidence;
+- when the work is unknown, run PieceIdentifier before note-level AMT and keep context/fingerprint/semantic matches reviewable; semantic-only candidates require independent corroboration before promotion;
+- prefer alignment to a known score before reconstructing notation, but keep weak/below-threshold or uncorroborated measure/beat anchors review-only;
+- keep automatic note recognition as hypotheses with per-event confidence; note count alone does not establish confidence;
+- flag suspiciously long automatic music regions for possible merged-example review and preserve explicit timestamp override provenance;
 - only build provisional ScoreIR from explicit quantized measure/beat evidence;
 - never promote an audio reconstruction to confirmed score evidence by itself;
 - preserve instructor interpretation, audio-derived evidence, verified score

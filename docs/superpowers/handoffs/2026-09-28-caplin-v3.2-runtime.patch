@@ -1,0 +1,588 @@
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/SKILL.md /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/SKILL.md
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/SKILL.md	2026-09-28 11:42:36
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/SKILL.md	2026-09-28 18:34:26
+@@ -2,7 +2,7 @@
+ name: caplin-form-tutor
+ description: Tutor Caplin-style musical form, analyze and annotate scores, understand lecture recordings including musical demonstrations, explain or write analytical essays and assignments, and learn course materials. Finish score updates, essays, tests, assignments, and uploaded handouts with Mochi's narrated, captioned whiteboard lesson, whole-score context, verified playback, original musical examples, and a full-performance finale when studying a piece.
+ metadata:
+-  version: "3.1.0"
++  version: "3.2.0"
+ ---
+ 
+ # Caplin Classical Form Private Tutor — V3
+@@ -56,9 +56,10 @@
+ For any lecture/class/lesson recording that contains actual music, do not stop at a speech transcript and do not reduce the passage to `[music]`. Use [Lecture audio score listener](references/lecture-audio-score-listener.md).
+ 
+ - Segment and preserve `speech`, `music`, `speech_over_music`, `silence_noise`, and `unknown` spans with source timestamps.
+-- Prefer **piece identification → score retrieval/alignment → AMT fallback**. When the composer/work/movement is not already known, identify the work before note-by-note transcription. If external processing has been explicitly authorized, the optional Google Gemini audio-understanding identifier may be used as semantic evidence; do not treat it as Google Sound Search or as verified score evidence.
+-- Prefer known-score alignment first once the work/score is known. Map the played excerpt to measure/beat anchors before considering a reconstructed score.
+-- Automatic music transcription is evidence, not ground truth. Preserve note/onset/rhythm/voice confidence and send unclear polyphony, noise, overlap, or weak matches to `requires_human_review`.
++- Prefer **piece identification → score retrieval/alignment → AMT fallback**. When the composer/work/movement is not already known, identify the work before note-by-note transcription. If external processing has been explicitly authorized, the optional Google Gemini audio-understanding identifier may be used as semantic **candidate** evidence; do not treat it as Google Sound Search, verified identity, or verified score evidence. A semantic candidate remains `requires_human_review` until independently corroborated by course context, fingerprint/reference-audio evidence, or reviewed score alignment.
++- Prefer known-score alignment first once the work/score is known. Map the played excerpt to measure/beat anchors before considering a reconstructed score, but do not promote anchors merely because an aligner returned them. Weak/below-threshold or conflicting routes stay candidate anchors and `requires_human_review`.
++- Automatic music transcription is evidence, not ground truth. Preserve note/onset/rhythm/voice confidence and send unclear polyphony, noise, overlap, weak matches, or note output without calibrated confidence to `requires_human_review`. Note count alone never upgrades Basic Pitch output to probable score evidence.
++- Treat unusually long automatic music regions as possible merged examples. Preserve the original detector span, flag it for review, and use explicit `--music-range START:END` overrides when a human-reviewed timestamp split is needed.
+ - Only reconstruct a provisional score from explicit quantized note evidence. Never invent missing notes, rests, barlines, meter, or voices, and never label an audio reconstruction `verified` merely because it is plausible.
+ - Once symbolic notation exists, route the score/MusicXML through the installed `score-harmony-analyzer` when exact pitches, harmony, Roman numerals, cadence candidates, or score-derived formal claims matter.
+ - Link the surrounding instructor explanation to the musical span and, when evidence supports it, to composer/work/movement/measure/beat so later retrieval can return both what the professor said and the exact passage demonstrated.
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/references/lecture-audio-score-listener.md /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/references/lecture-audio-score-listener.md
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/references/lecture-audio-score-listener.md	2026-09-28 17:15:41
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/references/lecture-audio-score-listener.md	2026-09-28 18:46:08
+@@ -17,7 +17,7 @@
+    - identify work/movement from explicit lecture/course context when possible;
+    - when the work is still unknown, run piece identification **before** note-by-note AMT;
+    - Google Sound Search / Pixel Now Playing are useful first-party recognition systems but are not a documented public third-party Sound Search API; do not invent an endpoint for them;
+-   - CAPLIN may use the documented Google Gemini audio-understanding API as an optional semantic piece identifier only when external audio transfer is explicitly enabled; a Gemini match stays probable/ambiguous until corroborated;
++   - CAPLIN may use the documented Google Gemini audio-understanding API as an optional semantic piece identifier only when external audio transfer is explicitly enabled; a Gemini response is candidate evidence only and stays `requires_human_review`/ambiguous until independently corroborated; a single semantic candidate is never promotable by itself;
+    - once a candidate work is known, obtain or use an authoritative/user-supplied score and align the excerpt to that score before measure-level analysis;
+    - if an authoritative score is already available, align the audio to that score first;
+    - use audio-to-note transcription only as supplementary/fallback evidence;
+@@ -54,7 +54,7 @@
+ 
+ The known-score path uses symbolic chroma plus subsequence dynamic-time-warping so a short excerpt can be located inside a longer score. Its `heuristic_similarity` is only a review aid; measure/beat anchors still require score/audio spot-checking. The pipeline also emits per-region Basic Pitch note-event JSON/CSV/MIDI as audio-derived hypotheses. Use `--music-range START:END` only to correct/override segmentation when necessary.
+ 
+-The doctor reports local availability and whether the optional Google semantic identifier is configured. It does not send audio, download a model, grant cloud permission, or claim a backend works when it is absent. On macOS, CAPLIN may read the Gemini API key from the Login Keychain item `caplin-google-gemini-api` / `caplin-form-tutor`; the secret value is never printed. Google identification is disabled by default; invoke `--identify-piece EXCERPT --allow-external-google` only for a deliberately selected short excerpt when external processing is authorized. The default Gemini model remains configurable with `CAPLIN_GOOGLE_AUDIO_MODEL`; temporary HTTP 503 model-capacity failures may fall back only to the bounded model list in `CAPLIN_GOOGLE_AUDIO_FALLBACK_MODELS`.
++The doctor reports local availability and whether the optional Google semantic identifier is configured. It does not send audio, download a model, grant cloud permission, or claim a backend works when it is absent. On macOS, CAPLIN may read the Gemini API key from the Login Keychain item `caplin-google-gemini-api` / `caplin-form-tutor`; the secret value is never printed. Google identification is disabled by default; invoke `--identify-piece EXCERPT --allow-external-google` only for a deliberately selected short excerpt when external processing is authorized. The default Gemini model remains configurable with `CAPLIN_GOOGLE_AUDIO_MODEL`; HTTP 429/503 availability failures may fail over only across the bounded model list in `CAPLIN_GOOGLE_AUDIO_FALLBACK_MODELS`, and attempt history stays reviewable. When the lecture/course already supplies bounded prior information, `lecture_audio_pipeline.py --google-context-hint "…"` may pass that context to Gemini explicitly as a prior, never as verification.
+ 
+ Intended local stack:
+ - ffmpeg for bounded audio extraction/conversion;
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/scripts/audio_score_listener.py /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/scripts/audio_score_listener.py
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/scripts/audio_score_listener.py	2026-09-28 17:13:03
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/scripts/audio_score_listener.py	2026-09-28 18:38:05
+@@ -47,6 +47,18 @@
+ )
+ 
+ 
++class GoogleIdentificationError(RuntimeError):
++    """Provider failure that preserves the bounded model-attempt history."""
++
++    def __init__(
++        self,
++        message: str,
++        attempt_history: list[dict[str, object]],
++    ) -> None:
++        super().__init__(message)
++        self.attempt_history = tuple(dict(item) for item in attempt_history)
++
++
+ def _runtime_pythons(root: Path) -> list[Path]:
+     paths = [
+         root / "segmenter" / ".venv" / "bin" / "python",
+@@ -234,6 +246,7 @@
+     allow_external: bool,
+     model: str = DEFAULT_GOOGLE_AUDIO_MODEL,
+     timeout_seconds: int = 90,
++    context_hint: str | None = None,
+ ) -> dict[str, object]:
+     """Best-effort semantic piece identification through documented Gemini audio input.
+ 
+@@ -267,14 +280,29 @@
+     if not mime_type.startswith("audio/"):
+         raise ValueError("piece identification expects an audio excerpt")
+ 
++    clean_context = ""
++    if context_hint is not None:
++        if not isinstance(context_hint, str):
++            raise ValueError("context_hint must be text")
++        clean_context = context_hint.strip()
++        if len(clean_context) > 2000:
++            raise ValueError("context_hint must be at most 2000 characters")
++
+     prompt = (
+         "Identify the musical work in this excerpt if the evidence supports it. "
+         "Return JSON only with a top-level candidates array. Each candidate may "
+         "contain composer, work, movement, recording_if_known, and match_notes. "
+         "Do not invent measure numbers, pitches, or metadata. If the work cannot "
+         "be identified reliably, return an empty candidates array and explain why "
+-        "in unresolved. This is identification evidence, not score verification."
++        "in unresolved. This is identification evidence, not score verification. "
++        "Do not guess from generic style alone."
+     )
++    if clean_context:
++        prompt += (
++            " Course/lecture prior context follows. Treat it as prior context, not proof; "
++            "the audio may contradict it and you must preserve that uncertainty: "
++            + clean_context
++        )
+     request_payload = {
+         "contents": [
+             {
+@@ -303,6 +331,7 @@
+     outer: dict[str, object] | None = None
+     used_model = model
+     fallback_used = False
++    attempt_history: list[dict[str, object]] = []
+     for index, candidate_model in enumerate(models_to_try):
+         endpoint = (
+             "https://generativelanguage.googleapis.com/v1beta/models/"
+@@ -320,16 +349,32 @@
+         try:
+             with urlrequest.urlopen(request, timeout=timeout_seconds) as response:
+                 outer = json.loads(response.read().decode("utf-8"))
++            attempt_history.append(
++                {
++                    "model": candidate_model,
++                    "http_status": 200,
++                    "retryable": False,
++                }
++            )
+             used_model = candidate_model
+             fallback_used = candidate_model != model
+             break
+         except urlerror.HTTPError as exc:
+-            # Only fail over for temporary model-capacity errors. Authentication,
+-            # permission, quota, malformed-request, and other failures stay visible.
+-            if exc.code == 503 and index < len(models_to_try) - 1:
++            retryable = exc.code in {429, 503}
++            attempt_history.append(
++                {
++                    "model": candidate_model,
++                    "http_status": exc.code,
++                    "retryable": retryable,
++                }
++            )
++            # 429/503 are provider-availability failures, not music evidence.
++            # Fail over only across the bounded configured model list.
++            if retryable and index < len(models_to_try) - 1:
+                 continue
+-            raise RuntimeError(
+-                f"Google audio identification returned HTTP {exc.code}"
++            raise GoogleIdentificationError(
++                f"Google audio identification returned HTTP {exc.code}",
++                attempt_history,
+             ) from exc
+         except (urlerror.URLError, TimeoutError) as exc:
+             raise RuntimeError("Google audio identification request failed") from exc
+@@ -358,22 +403,30 @@
+         if item:
+             cleaned.append(item)
+ 
+-    state = "probable" if len(cleaned) == 1 else "ambiguous"
+-    if not cleaned:
+-        state = "requires_human_review"
++    # Semantic audio understanding is candidate generation only. A single,
++    # confident-sounding answer is still uncorroborated and must not become
++    # identity truth merely because there is only one candidate.
++    state = "ambiguous" if len(cleaned) > 1 else "requires_human_review"
++    unresolved = str(identified.get("unresolved", "")).strip()
++    if cleaned and not unresolved:
++        unresolved = "semantic candidate requires independent corroboration"
+     return {
+         "provider": "google_gemini",
+         "method": "semantic",
+         "model": used_model,
+         "requested_model": model,
+         "fallback_used": fallback_used,
++        "attempt_history": attempt_history,
++        "context_hint_used": bool(clean_context),
+         "evidence_state": state,
+         "candidates": cleaned,
+-        "unresolved": str(identified.get("unresolved", "")).strip(),
++        "unresolved": unresolved,
++        "corroborated": False,
++        "promotion_allowed": False,
+         "score_verified": False,
+         "next_step": (
+-            "retrieve or use an authoritative score and align the excerpt before "
+-            "measure-level analysis"
++            "corroborate with course context, reference/fingerprint evidence, or "
++            "a reviewed score alignment before promoting identity or measure claims"
+         ),
+     }
+ 
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/scripts/lecture_audio_pipeline.py /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/scripts/lecture_audio_pipeline.py
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/scripts/lecture_audio_pipeline.py	2026-09-28 11:41:11
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/scripts/lecture_audio_pipeline.py	2026-09-28 18:38:36
+@@ -21,6 +21,7 @@
+ from audio_score_listener import (
+     DEFAULT_GOOGLE_AUDIO_MODEL,
+     DEFAULT_RUNTIME_ROOT,
++    GoogleIdentificationError,
+     doctor,
+     identify_piece_google,
+ )
+@@ -147,6 +148,55 @@
+         raise RuntimeError(f"region extraction failed: {proc.stderr.strip()[:300]}")
+ 
+ 
++def _segmentation_review(
++    region: dict[str, object],
++    *,
++    max_seconds: float = 45.0,
++) -> dict[str, object]:
++    """Flag automatic music spans that are suspiciously long.
++
++    A long span is not automatically wrong; it is a review signal that the
++    detector may have merged multiple lecture examples. Explicit manual
++    overrides are already human-selected and are therefore not re-flagged.
++    """
++
++    if region.get("kind") != "music" or region.get("detector") == "manual_override":
++        return {"review_required": False, "reason": ""}
++    start = float(region.get("start_seconds", 0.0))
++    end = float(region.get("end_seconds", start))
++    if end - start > max_seconds:
++        return {
++            "review_required": True,
++            "reason": (
++                "automatic music region exceeds review duration; possible merged "
++                "examples require timestamp split/override review"
++            ),
++        }
++    return {"review_required": False, "reason": ""}
++
++
++def _google_failure_payload(exc: GoogleIdentificationError) -> dict[str, object]:
++    return {
++        "available": False,
++        "reason": str(exc),
++        "attempt_history": [dict(item) for item in exc.attempt_history],
++        "corroborated": False,
++        "promotion_allowed": False,
++    }
++
++
++def _basic_pitch_evidence_state(
++    *,
++    note_count: int,
++    has_calibrated_confidence: bool,
++) -> str:
++    """Do not promote note hypotheses merely because the detector emitted notes."""
++
++    if note_count <= 0 or not has_calibrated_confidence:
++        return "requires_human_review"
++    return "probable"
++
++
+ def _basic_pitch(
+     excerpt: Path,
+     region_dir: Path,
+@@ -211,7 +261,11 @@
+         "notes_json": str(notes_path),
+         "csv": str(csv_candidates[0]),
+         "midi": str(midi_candidates[0]) if midi_candidates else None,
+-        "evidence_state": "probable" if notes else "requires_human_review",
++        "has_calibrated_confidence": False,
++        "evidence_state": _basic_pitch_evidence_state(
++            note_count=len(notes),
++            has_calibrated_confidence=False,
++        ),
+     }
+ 
+ 
+@@ -249,7 +303,12 @@
+         payload = json.loads(output.read_text(encoding="utf-8"))
+     except (OSError, json.JSONDecodeError):
+         return {"available": False, "reason": "score alignment emitted unreadable output"}
+-    return {"available": True, **payload}
++    review_required = bool(payload.get("review_required", True))
++    return {
++        "available": True,
++        **payload,
++        "promotion_allowed": not review_required,
++    }
+ 
+ 
+ def analyze(
+@@ -261,12 +320,16 @@
+     known_score: Path | None = None,
+     allow_external_google: bool = False,
+     google_model: str = DEFAULT_GOOGLE_AUDIO_MODEL,
++    google_context_hint: str | None = None,
++    max_unreviewed_music_seconds: float = 45.0,
+ ) -> dict[str, object]:
+     input_path = input_path.expanduser().resolve()
+     output_dir = output_dir.expanduser().resolve()
+     runtime_root = runtime_root.expanduser().resolve()
+     if not input_path.is_file():
+         raise ValueError("input recording does not exist")
++    if max_unreviewed_music_seconds <= 0:
++        raise ValueError("max_unreviewed_music_seconds must be positive")
+     if known_score is not None:
+         known_score = known_score.expanduser().resolve()
+         if not known_score.is_file():
+@@ -314,6 +377,10 @@
+         region_id = str(region["region_id"])
+         start = float(region["start_seconds"])
+         end = float(region["end_seconds"])
++        segmentation_review = _segmentation_review(
++            region,
++            max_seconds=max_unreviewed_music_seconds,
++        )
+         region_dir = output_dir / region_id
+         region_dir.mkdir(parents=True, exist_ok=True)
+         excerpt = region_dir / "excerpt.wav"
+@@ -335,12 +402,15 @@
+                         excerpt,
+                         allow_external=True,
+                         model=google_model,
++                        context_hint=google_context_hint,
+                     )
+                     identification = {"available": True, **identified}
+                     (region_dir / "piece-identification.json").write_text(
+                         json.dumps(identification, ensure_ascii=False, indent=2) + "\n",
+                         encoding="utf-8",
+                     )
++                except GoogleIdentificationError as exc:
++                    identification = _google_failure_payload(exc)
+                 except (ValueError, RuntimeError) as exc:
+                     identification = {"available": False, "reason": str(exc)}
+ 
+@@ -363,9 +433,11 @@
+                 "piece_identification": identification,
+                 "known_score_alignment": alignment,
+                 "transcription": transcription,
++                "segmentation_review": segmentation_review,
+                 "review_state": (
+                     "probable"
+-                    if alignment.get("available") and not alignment.get("review_required", True)
++                    if alignment.get("promotion_allowed", False)
++                    and not segmentation_review["review_required"]
+                     else "requires_human_review"
+                 ),
+             }
+@@ -417,6 +489,16 @@
+     )
+     parser.add_argument("--allow-external-google", action="store_true")
+     parser.add_argument("--google-model", default=DEFAULT_GOOGLE_AUDIO_MODEL)
++    parser.add_argument(
++        "--google-context-hint",
++        help="optional course/lecture prior context; never treated as verification",
++    )
++    parser.add_argument(
++        "--max-unreviewed-music-seconds",
++        type=float,
++        default=45.0,
++        help="flag longer automatic music regions for possible merged-example review",
++    )
+     args = parser.parse_args()
+     try:
+         manifest = analyze(
+@@ -427,6 +509,8 @@
+             known_score=args.known_score,
+             allow_external_google=args.allow_external_google,
+             google_model=args.google_model,
++            google_context_hint=args.google_context_hint,
++            max_unreviewed_music_seconds=args.max_unreviewed_music_seconds,
+         )
+     except (ValueError, RuntimeError, subprocess.SubprocessError) as exc:
+         print(f"CAPLIN lecture-audio analysis failed: {exc}", file=sys.stderr)
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/tests/test_audio_score_listener_contract.py /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/tests/test_audio_score_listener_contract.py
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/tests/test_audio_score_listener_contract.py	2026-09-28 11:43:18
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/tests/test_audio_score_listener_contract.py	2026-09-28 18:34:02
+@@ -89,9 +89,9 @@
+         self.assertIn("sound search", text)
+         self.assertIn("gemini", text)
+ 
+-    def test_release_version_is_3_1(self):
++    def test_release_version_is_3_2(self):
+         text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+-        self.assertIn('version: "3.1.0"', text)
++        self.assertIn('version: "3.2.0"', text)
+ 
+ 
+ if __name__ == "__main__":
+diff -ru /Users/ouxianxing/.agents/skills/caplin-form-tutor/tests/test_google_fallback.py /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/tests/test_google_fallback.py
+--- /Users/ouxianxing/.agents/skills/caplin-form-tutor/tests/test_google_fallback.py	2026-09-28 17:16:20
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/tests/test_google_fallback.py	2026-09-28 18:38:58
+@@ -45,6 +45,123 @@
+ 
+ 
+ class GoogleFallbackTests(unittest.TestCase):
++    def test_http_429_uses_bounded_fallback_model_and_keeps_semantic_unpromoted(self):
++        with tempfile.NamedTemporaryFile(suffix=".wav") as handle:
++            handle.write(b"RIFF" + b"0" * 64)
++            handle.flush()
++            rate_limited = urlerror.HTTPError(
++                "https://example.invalid", 429, "rate limited", None, None
++            )
++            candidate_payload = {
++                "candidates": [
++                    {
++                        "content": {
++                            "parts": [
++                                {
++                                    "text": json.dumps(
++                                        {
++                                            "candidates": [
++                                                {
++                                                    "composer": "Test Composer",
++                                                    "work": "Test Work",
++                                                    "movement": "I",
++                                                }
++                                            ],
++                                            "unresolved": "",
++                                        }
++                                    )
++                                }
++                            ]
++                        }
++                    }
++                ]
++            }
++
++            class CandidateResponse:
++                def __enter__(self):
++                    return self
++
++                def __exit__(self, exc_type, exc, tb):
++                    return False
++
++                def read(self):
++                    return json.dumps(candidate_payload).encode("utf-8")
++
++            with patch.object(listener, "_google_api_key", return_value="dummy"), patch.object(
++                listener.urlrequest,
++                "urlopen",
++                side_effect=[rate_limited, CandidateResponse()],
++            ):
++                result = listener.identify_piece_google(
++                    Path(handle.name),
++                    allow_external=True,
++                    model="gemini-3.8-flash",
++                )
++            rate_limited.close()
++
++        self.assertTrue(result["fallback_used"])
++        self.assertEqual(result["model"], listener.GOOGLE_FALLBACK_AUDIO_MODELS[0])
++        self.assertEqual(result["evidence_state"], "requires_human_review")
++        self.assertFalse(result["corroborated"])
++        self.assertFalse(result["promotion_allowed"])
++        self.assertEqual(result["attempt_history"][0]["http_status"], 429)
++
++    def test_exhausted_transient_models_preserves_attempt_history(self):
++        with tempfile.NamedTemporaryFile(suffix=".wav") as handle:
++            handle.write(b"RIFF" + b"0" * 64)
++            handle.flush()
++            failures = [
++                urlerror.HTTPError(
++                    "https://example.invalid", 503, "high demand", None, None
++                )
++                for _ in range(1 + len(listener.GOOGLE_FALLBACK_AUDIO_MODELS))
++            ]
++            with patch.object(listener, "_google_api_key", return_value="dummy"), patch.object(
++                listener.urlrequest,
++                "urlopen",
++                side_effect=failures,
++            ):
++                with self.assertRaises(listener.GoogleIdentificationError) as caught:
++                    listener.identify_piece_google(
++                        Path(handle.name),
++                        allow_external=True,
++                        model="gemini-3.8-flash",
++                    )
++
++        for failure in failures:
++            failure.close()
++        history = caught.exception.attempt_history
++        self.assertEqual(len(history), 1 + len(listener.GOOGLE_FALLBACK_AUDIO_MODELS))
++        self.assertTrue(all(item["http_status"] == 503 for item in history))
++
++    def test_context_hint_is_sent_as_prior_not_verification(self):
++        seen_prompt = []
++
++        def fake_urlopen(request, timeout):
++            payload = json.loads(request.data.decode("utf-8"))
++            seen_prompt.append(payload["contents"][0]["parts"][0]["text"])
++            return _FakeResponse()
++
++        with tempfile.NamedTemporaryFile(suffix=".wav") as handle:
++            handle.write(b"RIFF" + b"0" * 64)
++            handle.flush()
++            with patch.object(listener, "_google_api_key", return_value="dummy"), patch.object(
++                listener.urlrequest,
++                "urlopen",
++                side_effect=fake_urlopen,
++            ):
++                result = listener.identify_piece_google(
++                    Path(handle.name),
++                    allow_external=True,
++                    model="gemini-3.8-flash",
++                    context_hint="Official lecture credits include Mozart K.504, K.525, and K.551.",
++                )
++
++        self.assertIn("Official lecture credits include Mozart", seen_prompt[0])
++        self.assertIn("prior context, not proof", seen_prompt[0])
++        self.assertFalse(result["promotion_allowed"])
++        self.assertTrue(result["context_hint_used"])
++
+     def test_http_503_uses_bounded_fallback_model(self):
+         with tempfile.NamedTemporaryFile(suffix=".wav") as handle:
+             handle.write(b"RIFF" + b"0" * 64)
+@@ -62,6 +179,7 @@
+                     allow_external=True,
+                     model="gemini-3.8-flash",
+                 )
++            overload.close()
+         self.assertEqual(result["requested_model"], "gemini-3.8-flash")
+         self.assertEqual(result["model"], listener.GOOGLE_FALLBACK_AUDIO_MODELS[0])
+         self.assertTrue(result["fallback_used"])
+--- /dev/null	2026-09-28 18:49:39
++++ /Users/ouxianxing/Documents/Codex/2026-09-26/idea-improve-skill-caplin-form-tutor/outputs/v3-release/caplin-form-tutor/tests/test_pipeline_policy.py	2026-09-28 18:38:20
+@@ -0,0 +1,67 @@
++import importlib.util
++import inspect
++import sys
++import unittest
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++SCRIPTS = ROOT / "scripts"
++sys.path.insert(0, str(SCRIPTS))
++MODULE_PATH = SCRIPTS / "lecture_audio_pipeline.py"
++
++spec = importlib.util.spec_from_file_location("lecture_audio_pipeline_test_module", MODULE_PATH)
++pipeline = importlib.util.module_from_spec(spec)
++assert spec.loader is not None
++spec.loader.exec_module(pipeline)
++
++
++class PipelinePolicyTests(unittest.TestCase):
++    def test_long_automatic_music_region_requires_segmentation_review(self):
++        region = {
++            "region_id": "region-001",
++            "kind": "music",
++            "detector": "inaSpeechSegmenter",
++            "start_seconds": 10.0,
++            "end_seconds": 74.0,
++        }
++        result = pipeline._segmentation_review(region, max_seconds=45.0)
++        self.assertTrue(result["review_required"])
++        self.assertIn("possible merged examples", result["reason"])
++
++    def test_manual_override_is_not_flagged_as_automatic_merge(self):
++        region = {
++            "region_id": "manual-music-001",
++            "kind": "music",
++            "detector": "manual_override",
++            "start_seconds": 10.0,
++            "end_seconds": 74.0,
++        }
++        result = pipeline._segmentation_review(region, max_seconds=45.0)
++        self.assertFalse(result["review_required"])
++
++    def test_pipeline_accepts_google_context_hint(self):
++        params = inspect.signature(pipeline.analyze).parameters
++        self.assertIn("google_context_hint", params)
++
++    def test_google_provider_failure_payload_keeps_attempt_history(self):
++        exc = pipeline.GoogleIdentificationError(
++            "Google audio identification returned HTTP 503",
++            [{"model": "gemini-test", "http_status": 503, "retryable": True}],
++        )
++        payload = pipeline._google_failure_payload(exc)
++        self.assertFalse(payload["available"])
++        self.assertEqual(payload["attempt_history"][0]["http_status"], 503)
++        self.assertIn("HTTP 503", payload["reason"])
++
++    def test_basic_pitch_without_calibrated_confidence_stays_human_review(self):
++        self.assertEqual(
++            pipeline._basic_pitch_evidence_state(
++                note_count=200,
++                has_calibrated_confidence=False,
++            ),
++            "requires_human_review",
++        )
++
++
++if __name__ == "__main__":
++    unittest.main()
