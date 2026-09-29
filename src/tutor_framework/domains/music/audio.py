@@ -94,6 +94,7 @@ class PieceIdentificationResult:
     confidence: EvidenceConfidence = EvidenceConfidence.REQUIRES_HUMAN_REVIEW
     backend: str = ""
     reason: str = ""
+    corroborated: bool = False
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "candidates", tuple(self.candidates))
@@ -101,12 +102,27 @@ class PieceIdentificationResult:
             raise TypeError("candidates must contain PieceIdentificationCandidate models")
         if not isinstance(self.confidence, EvidenceConfidence):
             raise TypeError("confidence must be an EvidenceConfidence")
+        if not isinstance(self.corroborated, bool):
+            raise TypeError("corroborated must be a bool")
         if self.available and not self.candidates:
             raise ValueError("available piece identification must contain candidates")
-        if self.confidence is EvidenceConfidence.CONFIRMED and all(
+        if self.confidence is EvidenceConfidence.CONFIRMED and not self.corroborated:
+            raise ValueError("confirmed piece identification requires corroboration")
+
+    @property
+    def semantic_only(self) -> bool:
+        return bool(self.candidates) and all(
             item.method is PieceIdentificationMethod.SEMANTIC for item in self.candidates
-        ):
-            raise ValueError("semantic piece identification cannot be confirmed by itself")
+        )
+
+    @property
+    def promotable(self) -> bool:
+        return (
+            self.available
+            and self.corroborated
+            and self.confidence
+            in {EvidenceConfidence.CONFIRMED, EvidenceConfidence.PROBABLE}
+        )
 
 
 @dataclass(frozen=True)
@@ -198,6 +214,9 @@ class ScoreAlignmentResult:
     confidence: EvidenceConfidence = EvidenceConfidence.REQUIRES_HUMAN_REVIEW
     backend: str = ""
     reason: str = ""
+    match_score: float | None = None
+    promotion_threshold: float | None = None
+    corroborated: bool = False
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "anchors", tuple(self.anchors))
@@ -205,8 +224,35 @@ class ScoreAlignmentResult:
             raise TypeError("anchors must contain ScoreTimeAnchor models")
         if not isinstance(self.confidence, EvidenceConfidence):
             raise TypeError("confidence must be an EvidenceConfidence")
+        if not isinstance(self.corroborated, bool):
+            raise TypeError("corroborated must be a bool")
         if self.available and not self.anchors:
             raise ValueError("available alignment must contain anchors")
+        if self.match_score is not None:
+            _require_probability(self.match_score, "match_score")
+        if self.promotion_threshold is not None:
+            _require_probability(self.promotion_threshold, "promotion_threshold")
+        if self.promotion_threshold is not None and self.match_score is None:
+            raise ValueError("promotion_threshold requires match_score")
+        if self.confidence is EvidenceConfidence.CONFIRMED and not self.corroborated:
+            raise ValueError("confirmed score alignment requires corroboration")
+
+    @property
+    def promotable(self) -> bool:
+        if not self.available or not self.corroborated:
+            return False
+        if self.confidence not in {
+            EvidenceConfidence.CONFIRMED,
+            EvidenceConfidence.PROBABLE,
+        }:
+            return False
+        if (
+            self.promotion_threshold is not None
+            and self.match_score is not None
+            and self.match_score < self.promotion_threshold
+        ):
+            return False
+        return True
 
 
 @dataclass(frozen=True)
@@ -398,6 +444,7 @@ def analyze_lecture_audio(
     aligner: ScoreAligner | None = None,
     transcriber: AudioTranscriber | None = None,
     reconstructor: ScoreReconstructor | None = None,
+    max_music_region_seconds: float | None = None,
 ) -> LectureAudioAnalysis:
     """Analyze lecture audio without silently converting hypotheses into facts."""
 
@@ -405,6 +452,13 @@ def analyze_lecture_audio(
     _require_text("artifact_id", artifact_id)
     if known_score is not None and not isinstance(known_score, ScoreIR):
         raise TypeError("known_score must be a ScoreIR")
+    if max_music_region_seconds is not None:
+        if (
+            not isinstance(max_music_region_seconds, (int, float))
+            or isinstance(max_music_region_seconds, bool)
+            or max_music_region_seconds <= 0
+        ):
+            raise ValueError("max_music_region_seconds must be a positive number")
 
     try:
         raw_regions = tuple(segmenter.segment(audio_ref))
@@ -431,6 +485,13 @@ def analyze_lecture_audio(
             continue
 
         unresolved: list[str] = []
+        if (
+            max_music_region_seconds is not None
+            and region.end_seconds - region.start_seconds > max_music_region_seconds
+        ):
+            unresolved.append(
+                "music region exceeds review duration; possible merged examples require split/override review"
+            )
         piece_identification: PieceIdentificationResult | None = None
         alignment: ScoreAlignmentResult | None = None
         transcription: AudioTranscriptionResult | None = None
@@ -447,6 +508,11 @@ def analyze_lecture_audio(
                 unresolved.append(
                     piece_identification.reason or "piece identification unavailable"
                 )
+            elif not piece_identification.promotable:
+                unresolved.append(
+                    piece_identification.reason
+                    or "piece identification requires independent corroboration"
+                )
 
         if known_score is not None:
             if aligner is None:
@@ -455,6 +521,11 @@ def analyze_lecture_audio(
                 alignment = _safe_align(aligner, audio_ref, region, known_score)
                 if not alignment.available:
                     unresolved.append(alignment.reason or "known-score alignment unavailable")
+                elif not alignment.promotable:
+                    unresolved.append(
+                        alignment.reason
+                        or "known-score alignment has candidate anchors but is not promotable"
+                    )
 
         if transcriber is not None:
             transcription = _safe_transcribe(transcriber, audio_ref, region)
@@ -463,7 +534,7 @@ def analyze_lecture_audio(
         elif alignment is None or not alignment.available:
             unresolved.append("no audio transcription adapter is configured")
 
-        aligned = alignment is not None and alignment.available
+        aligned = alignment is not None and alignment.promotable
         if not aligned and transcription is not None and transcription.available:
             if reconstructor is not None:
                 reconstruction = _safe_reconstruct(
