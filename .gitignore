@@ -4,3 +4,6 @@
 /.codex/
 __pycache__/
 *.py[cod]
+
+# Private lesson media and execution evidence
+/artifacts/
