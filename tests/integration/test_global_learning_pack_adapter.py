@@ -37,6 +37,17 @@ class GlobalLearningPackAdapter(unittest.TestCase):
                                 fixture.content(), LearnerContext(text_only=True), target)
         self.assertFalse(target.exists())
 
+    @unittest.skipUnless(importlib.util.find_spec("verovio"), "local Verovio engraving required")
+    def test_complete_pilot_requests_score_media_without_text_only_conflict(self):
+        from tools.global_music_theory_pilot import generate
+        destination = self.fixture.root / "complete-global-pilot"
+        result = generate(destination)
+        self.assertEqual(result["state"], "original_engraved_pilot_for_review")
+        self.assertFalse(result["real_abrsm_paper_parsed"])
+        self.assertTrue(list(destination.rglob("annotated-score.pdf")))
+        self.assertTrue((destination / "original-score.musicxml").is_file())
+        self.assertFalse(list(destination.rglob("*.mp4")))
+
     def test_requested_score_uses_existing_manifest_and_real_pdf_annotation(self):
         fixture = self.fixture
         output = fixture.root / "global-output"

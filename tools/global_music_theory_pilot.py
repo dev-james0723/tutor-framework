@@ -67,7 +67,7 @@ def generate(destination: Path) -> dict:
                           ("notes", "annotated_score", "quiz", "flashcards", "listening_guide"),
                           help_mode="worked", language="en", confirmed=True, no_video=True)
     context = LearnerContext(learning_goal="understand", desired_deliverables=brief.materials,
-                             analysis_framework="basic_staff_pitch", text_only=True)
+                             analysis_framework="basic_staff_pitch", text_only=False)
     learning = build_learning_pack(dossier, brief, content, context, destination / "learning-pack")
     result = {"state": "original_engraved_pilot_for_review", "mini_exam": mini,
               "learning_pack": learning, "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
