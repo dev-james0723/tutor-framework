@@ -12,7 +12,7 @@ Use `bin/global-music-theory` from an installed copy, or `python -m tutor_framew
 ## Routing
 
 - Answer simple concepts immediately. Keep response language, UK/US note names, cadence framework, curriculum version, and solfege system separate. Never infer any of them from nationality.
-- For substantial tasks, ask only missing adaptive fields, at most five. Select only requested media; text-only overrides video and audio. Video requires an explicit requested deliverable.
+- For substantial tasks, ask only missing adaptive fields, at most five. Select only requested media; text-only overrides visual and audio media. Video requires an explicit requested deliverable.
 - Use `term` for the 100-entry relation catalogue. It contains public metadata and review placeholders, not private source-derived definitions. `not-equivalent`, `disputed`, and context-dependent relations require explanation rather than a silent translation.
 - Use `curriculum` for source-bound competency metadata. Unknown versions stay unknown. G6–8 exam blueprints need review; grade equivalence is never inferred.
 - Caplin access requires explicit `CaplinCompatibility` opt-in with a frozen baseline path, tenant, provenance ID, and allowlisted files. Do not read its private knowledge by default.

@@ -41,6 +41,8 @@ def install(repository: Path, destination: Path, *, with_caplin: bool = False, p
     source_code = repository / "src" / "tutor_framework"
     if not (source_skill / "SKILL.md").is_file() or not source_code.is_dir():
         raise ValueError("reviewed skill and package sources are required")
+    if destination.name == IDENTITY:
+        raise ValueError("destination must be the parent skills directory, not the final skill path")
     target = destination / IDENTITY
     if target.exists() or target.is_symlink():
         raise ValueError("new skill already exists; refusing to replace")
@@ -102,7 +104,7 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser()
     commands = p.add_subparsers(dest="command", required=True)
     i = commands.add_parser("install"); i.add_argument("--repository", required=True)
-    i.add_argument("--python-executable"); i.add_argument("--destination", required=True); i.add_argument("--with-caplin", action="store_true")
+    i.add_argument("--python-executable"); i.add_argument("--destination", required=True, help="Parent skills directory; the new skill identity is appended"); i.add_argument("--with-caplin", action="store_true")
     r = commands.add_parser("rollback"); r.add_argument("--destination", required=True)
     args = p.parse_args(argv)
     try:

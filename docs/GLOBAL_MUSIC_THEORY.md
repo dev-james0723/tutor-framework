@@ -46,9 +46,9 @@ An exam request contains `action`, an explicitly curated `catalogue`, `tenant_id
 
 ## Installation, preservation and rollback
 
-`tools/global_music_theory_install.py install --repository . --destination ~/.agents/skills/global-music-theory-super-skill --python-executable /absolute/path/to/private/runtime/bin/python --with-caplin` creates a new identity, copies the public runtime, optionally copies the frozen baseline into a private 0700 directory, pins the interpreter, and writes a file-hash manifest. Existing destinations are refused. It does not read/copy the private learning store, replace Caplin, or change Caplin's discovery identity. The runtime's optional dependencies are declared under `global-music` in `pyproject.toml`.
+`tools/global_music_theory_install.py install --repository . --destination ~/.agents/skills --python-executable /absolute/path/to/private/runtime/bin/python --with-caplin` creates a new identity, copies the public runtime, optionally copies the frozen baseline into a private 0700 directory, pins the interpreter, and writes a file-hash manifest. Existing destinations are refused. It does not read/copy the private learning store, replace Caplin, or change Caplin's discovery identity. The runtime's optional dependencies are declared under `global-music` in `pyproject.toml`.
 
-Rollback is `tools/global_music_theory_install.py rollback --destination ~/.agents/skills/global-music-theory-super-skill`. It verifies the new identity and renames only that installation to a unique archive; it does not delete source material, change Caplin, or reverse unrelated work. Bank schema changes require an explicit migration; unknown schema versions fail closed. Historical answer revisions cannot be overwritten.
+Rollback is `tools/global_music_theory_install.py rollback --destination ~/.agents/skills`. It verifies the new identity and renames only that installation to a unique archive; it does not delete source material, change Caplin, or reverse unrelated work. Bank schema changes require an explicit migration; unknown schema versions fail closed. Historical answer revisions cannot be overwritten.
 
 ## Release evidence and honest limits
 

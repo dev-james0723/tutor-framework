@@ -10,6 +10,16 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class GlobalInstallTest(unittest.TestCase):
+    def test_final_skill_path_cannot_be_misinterpreted_as_parent_directory(self):
+        with tempfile.TemporaryDirectory() as temp:
+            destination = Path(temp) / "global-music-theory-super-skill"
+            run = subprocess.run([sys.executable, str(ROOT / "tools/global_music_theory_install.py"),
+                                  "install", "--repository", str(ROOT), "--destination", str(destination)],
+                                 capture_output=True, text=True)
+            self.assertEqual(run.returncode, 2)
+            self.assertIn("parent", json.loads(run.stdout)["error"])
+            self.assertFalse(destination.exists())
+
     def test_temp_install_runs_without_repository_on_import_path(self):
         with tempfile.TemporaryDirectory() as temp:
             destination = Path(temp) / "skills"
