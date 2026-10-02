@@ -1,0 +1,515 @@
+{
+  "schema_version": "1.0",
+  "resources": [
+    {
+      "resource_id": "ABRSM-G1-2020-SAMPLE-Q",
+      "title": "Music Theory Grade 1 Sample Paper (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G1-2020-SAMPLE-A",
+      "title": "Music Theory Grade 1 Sample Model Answers (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G2-2020-SAMPLE-Q",
+      "title": "Music Theory Grade 2 Sample Paper (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G2-2020-SAMPLE-A",
+      "title": "Music Theory Grade 2 Sample Model Answers (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G3-2020-SAMPLE-Q",
+      "title": "Music Theory Grade 3 Sample Paper (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G4-2020-SAMPLE-Q",
+      "title": "Music Theory Grade 4 Sample Paper (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G4-2020-SAMPLE-A",
+      "title": "Music Theory Grade 4 Sample Model Answers (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G5-2020-SAMPLE-Q",
+      "title": "Music Theory Grade 5 Sample Paper (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G5-2020-SAMPLE-A",
+      "title": "Music Theory Grade 5 Sample Model Answers (2020)",
+      "version": "2020 sample",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-SYL-G1-5-2020",
+      "title": "Music Theory Syllabus Outline Grades 1–5 from 2020",
+      "version": "from 2020",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "SB-G1-NOTES",
+      "title": "ABRSM Music Theory Grade 1 by Sharon Bill",
+      "version": "A4; publication year unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "SB-G2-NOTES",
+      "title": "ABRSM Music Theory Grade 2 by Sharon Bill",
+      "version": "A4; publication year unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "SB-G3-NOTES",
+      "title": "ABRSM Music Theory Grade 3 by Sharon Bill",
+      "version": "A4; publication year unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "SB-G4-NOTES",
+      "title": "ABRSM Music Theory Grade 4 by Sharon Bill",
+      "version": "A4; publication year unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "SB-G5-NOTES",
+      "title": "ABRSM Music Theory Grade 5 by Sharon Bill",
+      "version": "A4; publication year unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "BLITZ-G1-2018-MOCK",
+      "title": "Grade 1 Theory Test Paper (ABRSM)",
+      "version": "2018 edition",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "pdf_identity_verified",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G1-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 1",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G1-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 1",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G2-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 2",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G2-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 2",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G3-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 3",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G3-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 3",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G4-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 4",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G4-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 4",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G5-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 5",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G5-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 5",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G6-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 6",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G6-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 6",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G7-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 7",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G7-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 7",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G8-2025-PRACTICE-Q",
+      "title": "Music Theory Practice Papers 2025, ABRSM Grade 8",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-G8-2025-PRACTICE-A",
+      "title": "Music Theory Practice Papers Model Answers 2025, ABRSM Grade 8",
+      "version": "2025 collection; impression unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G1-PDF-V6",
+      "title": "MyMusicTheory ABRSM Grade 1 PDF",
+      "version": "v6; updated 2025-08-06",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G2-PDF-V8",
+      "title": "MyMusicTheory ABRSM Grade 2 PDF",
+      "version": "v8; updated 2025-02-22",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G3-PDF-V3",
+      "title": "MyMusicTheory ABRSM Grade 3 PDF",
+      "version": "v3; updated 2024-10-29",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G4-PDF-V8",
+      "title": "MyMusicTheory ABRSM Grade 4 PDF",
+      "version": "v8; updated 2025-08-06",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G5-PDF-V8",
+      "title": "MyMusicTheory ABRSM Grade 5 PDF",
+      "version": "v8; updated 2025-08-06",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G6-PDF-V11",
+      "title": "MyMusicTheory ABRSM Grade 6 PDF",
+      "version": "v11; updated 2025-08-06",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G7-PDF-V7",
+      "title": "MyMusicTheory ABRSM Grade 7 PDF",
+      "version": "v7; updated 2026-07-15",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G8-PDF-V4",
+      "title": "MyMusicTheory ABRSM Grade 8 PDF",
+      "version": "v4; updated 2025-03-18",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "catalogue_metadata_verified_not_acquired",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-TW",
+      "title": "ABRSM 樂理考試介紹",
+      "version": "unknown",
+      "language": "zh-Hant",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-SHOP",
+      "title": "Music Theory books and practice papers",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-ABOUT",
+      "title": "About Music Theory exams",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "search_index_only_http403",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-REG",
+      "title": "Exam regulations",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "search_index_only_http403",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-RIGHTS",
+      "title": "Licensing",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "search_index_only_http403",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "ABRSM-ERRATA",
+      "title": "Syllabuses: publication corrections",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "search_index_only_http403",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "BLITZ-TERMS",
+      "title": "Terms",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-VERSIONS",
+      "title": "PDF Versions",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-REVISION",
+      "title": "New PDFs and Video Courses",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "index_read_full_not_retrieved",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-G6",
+      "title": "ABRSM Grade 6 Music Theory | Start",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    },
+    {
+      "resource_id": "MMT-COMPOSE",
+      "title": "Composition Questions: ABRSM Grade 6",
+      "version": "unknown",
+      "language": "en",
+      "rights_status": "未確認可再散布；僅作來源研究",
+      "evidence_state": "read",
+      "processing_permission": "pending_scope_confirmation",
+      "sha256": null
+    }
+  ]
+}

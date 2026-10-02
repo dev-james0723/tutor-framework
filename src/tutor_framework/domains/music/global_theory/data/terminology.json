@@ -1,0 +1,1643 @@
+{
+  "schema_version": "1.0",
+  "source_dataset_id": "GMT-TERMS-20261001-v1",
+  "records": [
+    {
+      "record_id": "T001",
+      "concept_id": "duration.note.double-whole",
+      "original_term": "breve / double whole note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T002",
+      "concept_id": "duration.note.whole",
+      "original_term": "semibreve / whole note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T003",
+      "concept_id": "duration.note.half",
+      "original_term": "minim / half note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T004",
+      "concept_id": "duration.note.quarter",
+      "original_term": "crotchet / quarter note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T005",
+      "concept_id": "duration.note.eighth",
+      "original_term": "quaver / eighth note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T006",
+      "concept_id": "duration.note.sixteenth",
+      "original_term": "semiquaver / sixteenth note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T007",
+      "concept_id": "duration.note.thirty-second",
+      "original_term": "demisemiquaver / thirty-second note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T008",
+      "concept_id": "duration.rest.double-whole",
+      "original_term": "breve rest / double whole note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T009",
+      "concept_id": "duration.rest.whole",
+      "original_term": "semibreve rest / whole note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T010",
+      "concept_id": "duration.rest.half",
+      "original_term": "minim rest / half note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T011",
+      "concept_id": "duration.rest.quarter",
+      "original_term": "crotchet rest / quarter note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T012",
+      "concept_id": "duration.rest.eighth",
+      "original_term": "quaver rest / eighth note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T013",
+      "concept_id": "duration.rest.sixteenth",
+      "original_term": "semiquaver rest / sixteenth note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T014",
+      "concept_id": "duration.rest.thirty-second",
+      "original_term": "demisemiquaver rest / thirty-second note rest",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T015",
+      "concept_id": "anchor.measure",
+      "original_term": "bar / measure",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [],
+      "version_or_year": "schema 2.0",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T016",
+      "concept_id": "anchor.pickup",
+      "original_term": "pickup / anacrusis",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "schema 2.0; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T017",
+      "concept_id": "anchor.occurrence",
+      "original_term": "repeat occurrence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "schema 2.0",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T018",
+      "concept_id": "meter.beat",
+      "original_term": "beat / pulse",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-METER",
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition; Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T019",
+      "concept_id": "meter.unit",
+      "original_term": "beat unit",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-METER"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T020",
+      "concept_id": "meter.simple",
+      "original_term": "simple meter",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-METER"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T021",
+      "concept_id": "meter.compound",
+      "original_term": "compound meter",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-METER"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T022",
+      "concept_id": "duration.dot",
+      "original_term": "augmentation dot",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T023",
+      "concept_id": "duration.tie",
+      "original_term": "tie",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-RHYTHM"
+      ],
+      "version_or_year": "Fall 2023 course edition; schema 2.0",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T024",
+      "concept_id": "duration.triplet",
+      "original_term": "triplet",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-RHYTHM",
+        "ABRSM-SYL-G1-5-2020"
+      ],
+      "version_or_year": "Fall 2023 course edition; from 2020",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T025",
+      "concept_id": "duration.duplet",
+      "original_term": "duplet",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-SYL-G1-5-2020"
+      ],
+      "version_or_year": "from 2020",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "補tuplet明確原文與範例",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T026",
+      "concept_id": "pitch.whole-step",
+      "original_term": "tone / whole step",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T027",
+      "concept_id": "pitch.half-step",
+      "original_term": "semitone / half step",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "exact",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T028",
+      "concept_id": "pitch.name",
+      "original_term": "pitch name / note name",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-PITCH",
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition; Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T029",
+      "concept_id": "solfege.syllable",
+      "original_term": "solfège syllable",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "BERKLEE-EAR"
+      ],
+      "version_or_year": "unknown; 2.25 documentation",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "Berklee支持movable-do；fixed-do教法須另讀明確原典",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T030",
+      "concept_id": "solfege.fixed",
+      "original_term": "fixed-do",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "FR-CNSMDP"
+      ],
+      "version_or_year": "2.25 documentation; cycle supérieur",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "來源不足以核所有fixed-do變音音節和教學差異",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T031",
+      "concept_id": "solfege.movable",
+      "original_term": "movable-do",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "BERKLEE-EAR"
+      ],
+      "version_or_year": "unknown",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T032",
+      "concept_id": "pitch.scale-degree",
+      "original_term": "scale degree",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-MAJOR",
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T033",
+      "concept_id": "notation.jianpu",
+      "original_term": "簡譜數字",
+      "language": "zh-Hant / zh-Hans",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [],
+      "version_or_year": "schema 2.0",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "新增可信原語簡譜教材及notation測試後才能升級",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T034",
+      "concept_id": "pitch.german-H",
+      "original_term": "H (Deutsch)",
+      "language": "de / en",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "2.25 documentation",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T035",
+      "concept_id": "pitch.german-B",
+      "original_term": "B (Deutsch)",
+      "language": "de / en",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "2.25 documentation",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T036",
+      "concept_id": "pitch.middle-C",
+      "original_term": "middle C / C4",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-PITCH"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T037",
+      "concept_id": "pitch.midi-display",
+      "original_term": "MIDI note number / octave display",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "APPLE-LOGIC",
+        "OMT-PITCH"
+      ],
+      "version_or_year": "Logic Pro10.7 guide; Fall 2023 course edition",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "用實際軟件官方版本文件和測試音核對",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T038",
+      "concept_id": "scale.major",
+      "original_term": "major scale",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T039",
+      "concept_id": "tonality.key",
+      "original_term": "key",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T040",
+      "concept_id": "notation.key-signature",
+      "original_term": "key signature",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T041",
+      "concept_id": "tonality.tonic",
+      "original_term": "tonic",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T042",
+      "concept_id": "tonality.dominant",
+      "original_term": "dominant",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-MAJOR"
+      ],
+      "version_or_year": "Fall 2023 course edition; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T043",
+      "concept_id": "scale.minor.natural",
+      "original_term": "natural minor",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-SYL-G1-5-2020",
+        "BERKLEE-HARM"
+      ],
+      "version_or_year": "from 2020; unknown",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "補各風格明文定義；outline只支持課綱範圍",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T044",
+      "concept_id": "scale.minor.harmonic",
+      "original_term": "harmonic minor",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-SYL-G1-5-2020",
+        "BERKLEE-HARM"
+      ],
+      "version_or_year": "from 2020; unknown",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "補各風格明文定義；outline只支持課綱範圍",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T045",
+      "concept_id": "scale.minor.melodic",
+      "original_term": "melodic minor",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-SYL-G1-5-2020",
+        "BERKLEE-HARM"
+      ],
+      "version_or_year": "from 2020; unknown",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "補各風格明文定義；outline只支持課綱範圍",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T046",
+      "concept_id": "chord.root",
+      "original_term": "chord root",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T047",
+      "concept_id": "chord.bass",
+      "original_term": "bass note",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "V3; installed",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T048",
+      "concept_id": "chord.inversion.first",
+      "original_term": "first inversion",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T049",
+      "concept_id": "chord.inversion.second",
+      "original_term": "second inversion",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T050",
+      "concept_id": "chord.inversion.third-seventh",
+      "original_term": "third inversion of a seventh chord",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T051",
+      "concept_id": "notation.figured-bass",
+      "original_term": "figured bass",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-INVERSION",
+        "DE-MODULE"
+      ],
+      "version_or_year": "Fall 2023 course edition; available module handbook; year unknown",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T052",
+      "concept_id": "analysis.roman",
+      "original_term": "Roman-numeral analysis",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "BERKLEE-HARM"
+      ],
+      "version_or_year": "installed 2026-10-01; V3; unknown",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T053",
+      "concept_id": "notation.lead-sheet",
+      "original_term": "lead-sheet symbols",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "BERKLEE-HARM"
+      ],
+      "version_or_year": "unknown; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T054",
+      "concept_id": "notation.nashville",
+      "original_term": "Nashville Number System",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "schema 2.0",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "需Nashville實務教師／原作者教材來源",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T055",
+      "concept_id": "notation.V65",
+      "original_term": "V6/5",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T056",
+      "concept_id": "notation.V42",
+      "original_term": "V4/2",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "OMT-INVERSION"
+      ],
+      "version_or_year": "Fall 2023 course edition; V3",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T057",
+      "concept_id": "notation.abc-inversions",
+      "original_term": "a / b / c inversion suffix",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-G5-2020-SAMPLE-Q",
+        "ABRSM-G5-2020-SAMPLE-A"
+      ],
+      "version_or_year": "2020 sample; 2020 sample",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T058",
+      "concept_id": "cadence.boundary",
+      "original_term": "cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T059",
+      "concept_id": "cadence.uk-perfect",
+      "original_term": "perfect cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "broader",
+      "source_ids": [
+        "ABRSM-G5-2020-SAMPLE-A"
+      ],
+      "version_or_year": "2020 sample; installed 2026-10-01",
+      "evidence_status": "mapping_requires_framework_review",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "補官方文字定義；此處broader是有條件比較，不將樣例推成所有教材的充分必要條件",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T060",
+      "concept_id": "cadence.authentic",
+      "original_term": "authentic cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed",
+      "evidence_status": "mapping_requires_framework_review",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T061",
+      "concept_id": "cadence.PAC",
+      "original_term": "PAC / perfect authentic cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "narrower",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T062",
+      "concept_id": "cadence.IAC-generic",
+      "original_term": "IAC (generic analyzer)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "installed generic heuristic",
+      "relation": "broader",
+      "source_ids": [],
+      "version_or_year": "installed",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T063",
+      "concept_id": "cadence.IAC-caplin",
+      "original_term": "IAC (Caplin protocol)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived private materials",
+      "relation": "disputed",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "conflict_requires_review",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "以合法原典及課程teacher確認，之後另行授權修正",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T064",
+      "concept_id": "cadence.uk-imperfect",
+      "original_term": "imperfect cadence (UK label)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "ABRSM-SYL-G1-5-2020"
+      ],
+      "version_or_year": "from 2020; installed 2026-10-01",
+      "evidence_status": "mapping_requires_framework_review",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T065",
+      "concept_id": "cadence.HC",
+      "original_term": "HC / half cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T066",
+      "concept_id": "cadence.plagal-exam",
+      "original_term": "plagal cadence (exam)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "ABRSM-G5-2020-SAMPLE-A"
+      ],
+      "version_or_year": "2020 sample; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T067",
+      "concept_id": "cadence.plagal-caplin",
+      "original_term": "plagal motion (Caplin)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T068",
+      "concept_id": "cadence.deceptive",
+      "original_term": "deceptive cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T069",
+      "concept_id": "cadence.evaded",
+      "original_term": "evaded cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T070",
+      "concept_id": "cadence.abandoned",
+      "original_term": "abandoned cadence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T071",
+      "concept_id": "cadence.dominant-arrival",
+      "original_term": "dominant arrival",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T072",
+      "concept_id": "form.phrase",
+      "original_term": "phrase",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "overlapping",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T073",
+      "concept_id": "form.sentence",
+      "original_term": "sentence",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T074",
+      "concept_id": "form.period",
+      "original_term": "period",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T075",
+      "concept_id": "form.theme",
+      "original_term": "theme",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "broader",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T076",
+      "concept_id": "form.motive",
+      "original_term": "motive",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "overlapping",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T077",
+      "concept_id": "form.BI",
+      "original_term": "basic idea (BI)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "overlapping",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T078",
+      "concept_id": "form.CI",
+      "original_term": "contrasting idea (CI)",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T079",
+      "concept_id": "form.presentation",
+      "original_term": "presentation",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T080",
+      "concept_id": "form.continuation",
+      "original_term": "continuation",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T081",
+      "concept_id": "form.cadential",
+      "original_term": "cadential function",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "broader",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T082",
+      "concept_id": "form.antecedent",
+      "original_term": "antecedent",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T083",
+      "concept_id": "form.consequent",
+      "original_term": "consequent",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T084",
+      "concept_id": "form.real-measure",
+      "original_term": "real measure",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T085",
+      "concept_id": "form.rounded-binary",
+      "original_term": "rounded binary",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T086",
+      "concept_id": "form.tonicization",
+      "original_term": "tonicization",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "narrower",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T087",
+      "concept_id": "form.modulation",
+      "original_term": "modulation",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "broader",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T088",
+      "concept_id": "form.tight-knit",
+      "original_term": "tight-knit",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T089",
+      "concept_id": "form.loose",
+      "original_term": "loose",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "context-dependent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T090",
+      "concept_id": "form.elision",
+      "original_term": "elision",
+      "language": "en-GB / en-US",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Caplin-derived formal function",
+      "relation": "not-equivalent",
+      "source_ids": [],
+      "version_or_year": "installed 2026-10-01; installed 2026-10-01",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "private_source_review_required",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T091",
+      "concept_id": "jp.gakuten",
+      "original_term": "楽典",
+      "language": "ja",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "JP-AICHI"
+      ],
+      "version_or_year": "2026 entry",
+      "evidence_status": "term_attested_definition_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T092",
+      "concept_id": "jp.solfege",
+      "original_term": "ソルフェージュ",
+      "language": "ja",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "broader",
+      "source_ids": [
+        "JP-AICHI"
+      ],
+      "version_or_year": "2026 entry",
+      "evidence_status": "definition_review_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T093",
+      "concept_id": "kr.sichang-cheongeum",
+      "original_term": "시창청음",
+      "language": "ko",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "KR-SEJONG"
+      ],
+      "version_or_year": "unknown",
+      "evidence_status": "term_attested_definition_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T094",
+      "concept_id": "cn.shichang-lianer",
+      "original_term": "视唱练耳",
+      "language": "zh-Hans",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "overlapping",
+      "source_ids": [
+        "CN-CCOM"
+      ],
+      "version_or_year": "2026 proposed entrance changes",
+      "evidence_status": "term_attested_definition_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T095",
+      "concept_id": "tw.tingxie",
+      "original_term": "聽寫",
+      "language": "zh-Hant",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "context-dependent",
+      "source_ids": [
+        "TW-UTAIPEI"
+      ],
+      "version_or_year": "114學年度",
+      "evidence_status": "term_attested_definition_pending",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T096",
+      "concept_id": "fr.formation-musicale",
+      "original_term": "formation musicale",
+      "language": "fr",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "broader",
+      "source_ids": [
+        "FR-CNSMDP"
+      ],
+      "version_or_year": "cycle supérieur",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T097",
+      "concept_id": "de.gehoerbildung",
+      "original_term": "Gehörbildung",
+      "language": "de",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "common Western notation",
+      "relation": "broader",
+      "source_ids": [
+        "DE-MODULE"
+      ],
+      "version_or_year": "available module handbook; year unknown",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "公開教學前抽樣覆核；不得由本記錄推定其他教材同義",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T098",
+      "concept_id": "ar.maqam",
+      "original_term": "مقام / maqam",
+      "language": "ar / en",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Arabic maqam",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "MAQAM-AR",
+        "MAQAM-EN"
+      ],
+      "version_or_year": "unknown; unknown",
+      "evidence_status": "source_definition_checked",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "原生教師核聽例、區域用法及音程實踐",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T099",
+      "concept_id": "in.raga",
+      "original_term": "rāga / raga",
+      "language": "native term in official English curricula",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Hindustani or Carnatic, must specify",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "IN-HIND",
+        "IN-CARN"
+      ],
+      "version_or_year": "2026–27; 2026–27",
+      "evidence_status": "mapping_requires_framework_review",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "兩傳統教師分別覆核；原語原典與聲音證據待補",
+      "definition_state": "redacted_review_required"
+    },
+    {
+      "record_id": "T100",
+      "concept_id": "in.tala",
+      "original_term": "tāla / tala",
+      "language": "native term in official English curricula",
+      "region_or_locale": "不是使用者國籍的推定",
+      "analysis_tradition": "Hindustani or Carnatic, must specify",
+      "relation": "not-equivalent",
+      "source_ids": [
+        "IN-HIND",
+        "IN-CARN"
+      ],
+      "version_or_year": "2026–27; 2026–27",
+      "evidence_status": "mapping_requires_framework_review",
+      "public_reuse_status": "check_source_and_asset_rights_before_distribution",
+      "expert_review_needed": "當地教師驗證實際手勢、音節與變體",
+      "definition_state": "redacted_review_required"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tutor-framework"
-version = "0.2.0"
+version = "0.3.0"
 description = "A platform-neutral, evidence-grounded tutor framework."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,6 +14,16 @@ dependencies = []
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+learning-pack = ["PyMuPDF>=1.28,<2"]
+global-music = ["PyMuPDF>=1.28,<2", "verovio>=6.2,<7"]
+
+[project.scripts]
+caplin-learning-pack = "tutor_framework.domains.music.lesson.learning_pack.__main__:main"
+global-music-theory = "tutor_framework.domains.music.global_theory.__main__:main"
+
+[tool.setuptools.package-data]
+"tutor_framework.domains.music.lesson.learning_pack" = ["*.cjs"]
+"tutor_framework.domains.music.global_theory" = ["data/*.json"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

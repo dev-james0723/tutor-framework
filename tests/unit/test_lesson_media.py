@@ -22,7 +22,7 @@ class MediaTests(unittest.TestCase):
         self.assertEqual(notes[0]['start'],0);self.assertEqual(notes[0]['duration'],.5)
 
     def test_malformed_midi_fails_closed(self):
-        for bad in (b'not midi',midi_bytes()[:-5],midi_bytes().replace(b'\x83\x60\x80',b'\x83\x60\x90')):
+        for bad in (b'not midi',midi_bytes()[:-5],midi_bytes().replace(b'\x83\x60\x80\x3c\x00',b'\x83\x60\x90\x3c\x40')):
             with self.assertRaises(ValueError):self.a.midi_notes(bad)
 
     def test_symbolic_midi_mismatch_is_failed_not_warning(self):

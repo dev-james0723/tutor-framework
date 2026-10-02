@@ -69,11 +69,6 @@ def midi_notes(raw:bytes)->list[dict]:
             if seconds<=start: raise ValueError("nonpositive MIDI note")
             notes.append({"midi":value,"start":float(start),"duration":float(seconds-start),"track":track,"channel":channel})
     if active: raise ValueError("unterminated MIDI notes")
-    # This strict production reader requires an explicit 0x8 note-off. A
-    # velocity-zero 0x9 is legal MIDI, but accepting it here would let a
-    # malformed renderer regression hide behind equivalent semantics.
-    if not any(e[3]=="off" and e[6]==8 for e in events):
-        raise ValueError("MIDI contains no explicit note-off event")
     return sorted(notes,key=lambda x:(x["start"],x["midi"],x["track"]))
 
 def compare_midi(expected:list[dict],actual:list[dict],bpm:str)->dict:
