@@ -1,7 +1,7 @@
 ---
 name: global-music-theory-super-skill
 description: Use for music-theory tutoring, terminology conflicts, mixed curriculum/language contexts, source-bound exam study and original practice. Preserve Caplin Tutor as a separate specialist.
-version: "0.1.0"
+version: "0.2.0"
 display_name: Global Music Theory Super Skill
 ---
 
@@ -40,3 +40,13 @@ No network fetch, paid parser, upload, deployment, or permanent installation is 
 ## Operational reference
 
 Read `references/implementation.md` for schemas, source/rights gates and rollback. `exam --request request.json` handles exact-resource ingestion, version-safe retrieval, answer-origin layers and the five tutor modes. `mineru-replay` is local-only; a replay is never counted as a new API parse. Do not interpret doctor/catalogue success as an available live ABRSM bank. Grades 6–8 full blueprints and musical expert acceptance remain review-gated.
+
+## v0.2 executable theory workflow
+
+For an explicit interval, scale, triad/seventh chord, solfege, meter or two-sonority voice-leading question, translate the user's stated inputs into a `theory --request request.json --context context.json` request. Preserve spelled accidentals, octave numbers, named voices and minor-do basis. Never invent a missing octave, style or course version. The result carries a source/claim ID and is an analytical calculation, not an official answer or OMR proof. Simple explicit English interval/scale questions can also use `route` directly.
+
+Use `analyze-score --score source.musicxml --source-id source-name` for exact note IDs, written pitches, sounding MIDI, rational timing and bounded interval observations. Formal annotations are hypotheses, not automatic Caplin classification. PDFs return the existing MinerU/OMR review requirement. Use `reconcile --request claims.json` when a lecture and score disagree; retain both claim revisions.
+
+`compare-curricula SOURCE TARGET` compares evidenced competencies and gaps, never grade equivalence. `open-practice --topic composition --seed 17 --student-only` produces a student-only open task. Other supported topics are voice_leading and form_comparison. Omit student-only when intentionally generating all five teacher/student artifacts. `--output` explicitly persists them; no-save forbids output. Advanced tasks use original rubrics, not an unverified ABRSM Grade 6–8 blueprint. `check-open --request response.json` records criterion awards only with reviewer attribution; without awards, it gives a checklist and no invented grade.
+
+Examples of operation JSON are documented in `references/implementation.md`. The host model still performs pedagogical explanation and source review; do not describe these bounded operations as universal expert judgment.

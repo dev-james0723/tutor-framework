@@ -16,7 +16,7 @@ from .practice import build_original_practice, export_practice
 from .mini_exam import build_mini_exam, export_mini_exam
 
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 
 def _read(path: str) -> dict:
@@ -44,6 +44,14 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="global-music-theory")
     commands = p.add_subparsers(dest="command", required=True)
     commands.add_parser("doctor")
+    theory = commands.add_parser("theory"); theory.add_argument("--request", required=True); theory.add_argument("--context")
+    score = commands.add_parser("analyze-score"); score.add_argument("--score", required=True); score.add_argument("--source-id", required=True); score.add_argument("--context"); score.add_argument("--formal-annotations")
+    compare = commands.add_parser("compare-curricula"); compare.add_argument("source"); compare.add_argument("target")
+    compare.add_argument("--source-version"); compare.add_argument("--target-version")
+    reconcile = commands.add_parser("reconcile"); reconcile.add_argument("--request", required=True)
+    opened = commands.add_parser("open-practice"); opened.add_argument("--topic", required=True); opened.add_argument("--seed", type=int, required=True)
+    opened.add_argument("--context"); opened.add_argument("--output"); opened.add_argument("--no-save", action="store_true"); opened.add_argument("--student-only", action="store_true")
+    check_open = commands.add_parser("check-open"); check_open.add_argument("--request", required=True)
     r = commands.add_parser("route"); r.add_argument("question"); r.add_argument("--context")
     t = commands.add_parser("term"); t.add_argument("term"); t.add_argument("--context")
     c = commands.add_parser("curriculum"); c.add_argument("id"); c.add_argument("--version")
@@ -75,7 +83,7 @@ def parser() -> argparse.ArgumentParser:
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
     try:
-        if args.command in {"practice", "mini-exam"}:
+        if args.command in {"practice", "mini-exam", "open-practice"}:
             context = _context(args.context)
             if args.output and (args.no_save or context.no_save):
                 raise ValueError("no-save forbids practice export")
@@ -83,6 +91,34 @@ def main(argv=None) -> int:
             result = {"identity": "global-music-theory-super-skill", "display_name": "Global Music Theory Super Skill",
                       "version": VERSION, "modules": MODULE_STATUS, "external_calls": False,
                       "mineru": __import__(__package__+".mineru", fromlist=["mineru_configuration"]).mineru_configuration(), "caplin": "explicit opt-in only"}
+        elif args.command == "open-practice":
+            from .open_practice import build_open_practice, export_open_practice
+            bundle = build_open_practice(topic=args.topic, seed=args.seed, context=_context(args.context))
+            if args.output and 'student_paper' in bundle:
+                result = export_open_practice(bundle, Path(args.output), student_only=args.student_only)
+            else:
+                result = bundle['student_paper'] if args.student_only and 'student_paper' in bundle else bundle
+        elif args.command == "check-open":
+            from .open_practice import assess_open_response
+            request = _read(args.request)
+            result = assess_open_response(request['bundle'], request['learner_response'],
+                                          criterion_awards=request.get('criterion_awards'), reviewer_id=request.get('reviewer_id'))
+        elif args.command == "theory":
+            from .operations import evaluate
+            result = evaluate(_read(args.request), _context(args.context))
+        elif args.command == "analyze-score":
+            from .score_workflow import analyze_score
+            source = Path(args.score).expanduser()
+            if source.stat().st_size > 2_000_000:
+                raise ValueError("Score input exceeds the 2 MB symbolic reader limit")
+            annotations = _read(args.formal_annotations).get('annotations', []) if args.formal_annotations else []
+            result = analyze_score(source.read_bytes(), source_id=args.source_id, context=_context(args.context), formal_annotations=annotations)
+        elif args.command == "compare-curricula":
+            from .score_workflow import compare_curricula
+            result = compare_curricula(args.source, args.target, source_version=args.source_version, target_version=args.target_version)
+        elif args.command == "reconcile":
+            from .score_workflow import reconcile_claims
+            result = reconcile_claims(_read(args.request)['claims'])
         elif args.command == "route":
             result = route(args.question, _context(args.context))
         elif args.command == "term":

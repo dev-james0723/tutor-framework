@@ -79,7 +79,7 @@ def install(repository: Path, destination: Path, *, with_caplin: bool = False, p
         hashes = {str(path.relative_to(staging)): hashlib.sha256(path.read_bytes()).hexdigest()
                   for path in staging.rglob("*") if path.is_file() and not path.is_symlink()}
         (staging / "install-manifest.json").write_text(
-            json.dumps({"identity": IDENTITY, "version": "0.1.0", "files": hashes,
+            json.dumps({"identity": IDENTITY, "version": "0.2.0", "files": hashes,
                         "caplin_baseline_copied": with_caplin, "python_executable": interpreter, "source_commit": subprocess.check_output(["git", "-C", str(repository), "rev-parse", "HEAD"], text=True).strip()}, indent=2)+"\n", encoding="utf-8")
         os.replace(staging, target)
         return {"state": "installed_new_identity", "path": str(target),

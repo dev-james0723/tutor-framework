@@ -16,10 +16,10 @@ MODULES = (
 
 MODULE_STATUS = {
     "foundations": "pilot_supported", "rhythm": "pilot_supported",
-    "aural": "review_required", "tonal_harmony_counterpoint": "review_required",
+    "aural": "explicit_solfege_only_no_audio_dictation", "tonal_harmony_counterpoint": "bounded_chord_and_voice_motion_operations",
     "form_caplin_alternatives": "caplin_opt_in", "jazz_pop_songwriting": "review_required",
-    "composition_performance": "review_required", "exam": "pilot_supported",
-    "terminology": "pilot_supported", "score_pdf_lecture_audio_evidence": "review_required",
+    "composition_performance": "original_open_response_practice_not_board_calibrated", "exam": "pilot_supported",
+    "terminology": "pilot_supported", "score_pdf_lecture_audio_evidence": "explicit_musicxml_and_claim_conflicts_pdf_omr_review_required",
     "learning_pack": "existing_adapter", "source_qa": "pilot_supported",
 }
 
@@ -58,6 +58,15 @@ def route(question: str, context: LearnerContext) -> dict:
     if not question.strip():
         raise ValueError("question required")
     q = question.casefold()
+    operation_request = _explicit_operation(question)
+    if operation_request is not None:
+        from .operations import evaluate
+        result = evaluate(operation_request, context)
+        answer = result['explanation']
+        if result['operation'] == 'scale':
+            answer += ' ' + ', '.join(result['data'].get('notes', []))
+        return {'mode':'direct','answer':answer,'questions':[],'deliverables':['text'],
+                'modules':['foundations'],'evidence_state':result['state'],'operation_result':result}
     substantial = any(x in q for x in (
         "analyze", "analyse", "learning pack", "study pack", "學習包", "分析", "樂譜", "mock exam",
         "whole paper", "pdf", "audio", "lecture", "handout", "assignment", "annotate",
@@ -75,7 +84,7 @@ def route(question: str, context: LearnerContext) -> dict:
         missing.append("What do you want to accomplish with this material?")
     if not context.target_level_or_competencies:
         missing.append("Which step is difficult, or what have you already tried?")
-    if not context.curriculum_context.get("id"):
+    if not (context.curriculum_context.get("id") or context.curriculum_context.get("name")):
         missing.append("Which course, exam version, or assigned framework applies?")
     if not context.desired_deliverables:
         missing.append("Which outputs do you want: notes, annotated score, practice, or another format?")
@@ -83,7 +92,7 @@ def route(question: str, context: LearnerContext) -> dict:
         missing.append("Which analysis framework should govern the answer?")
     deliverables = list(context.desired_deliverables or ("notes",))
     if context.text_only:
-        deliverables = [x for x in deliverables if x not in {"video", "audio"}] or ["text"]
+        deliverables = [x for x in deliverables if x not in {"video", "audio", "annotated_score", "mindmap"}] or ["text"]
     return {"mode": "guided", "answer": answer, "questions": missing[:5],
             "deliverables": deliverables, "modules": ["learning_pack" if "pack" in q else "source_qa"],
             "evidence_state": "requires_material_review"}
@@ -129,4 +138,16 @@ def foundational_answer(question: str, context: LearnerContext) -> str | None:
         from .terminology import terminology
         resolved = terminology("IAC" if "iac" in q else "imperfect cadence", context)
         return resolved.get("definition") or "Specify UK exam terminology, US tonal harmony, or Caplin: those cadence definitions are not interchangeable."
+    return None
+
+
+def _explicit_operation(question):
+    """Only explicit pitch/octave requests run automatically; no file or key guesses."""
+    pitch_token = r"([A-G](?:#{1,2}|b{1,2})?[0-8])"
+    match = re.fullmatch(r"\s*(?:What is|Identify|Name) (?:the )?interval (?:from )?" + pitch_token + r" (?:to|and) " + pitch_token + r"[?.!]?\s*", question)
+    if match:
+        return {'operation':'interval','first':match.group(1),'second':match.group(2)}
+    match = re.fullmatch(r"\s*(?:Spell|Show|List)(?: the)? " + pitch_token + r" (major|natural minor|harmonic minor|melodic minor) scale[?.!]?\s*", question)
+    if match:
+        return {'operation':'scale','tonic':match.group(1),'mode':match.group(2).replace(' ','_')}
     return None

@@ -9,7 +9,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-1-sample-paper-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G1-2020-SAMPLE-A",
@@ -19,7 +23,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-1-sample-model-answers-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G2-2020-SAMPLE-Q",
@@ -29,7 +37,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-2-sample-paper-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G2-2020-SAMPLE-A",
@@ -39,7 +51,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-2-sample-model-answers-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G3-2020-SAMPLE-Q",
@@ -49,7 +65,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-3-sample-paper-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G4-2020-SAMPLE-Q",
@@ -59,7 +79,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-4-sample-paper-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G4-2020-SAMPLE-A",
@@ -69,7 +93,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-4-sample-model-answers-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G5-2020-SAMPLE-Q",
@@ -79,7 +107,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-5-sample-paper-.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G5-2020-SAMPLE-A",
@@ -89,7 +121,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/practical_info/theory_info/music-theory-grade-5-sample-model-answers.pdf",
+      "metadata_source_version": "2020 sample",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-SYL-G1-5-2020",
@@ -99,7 +135,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.org/sites/default/files/2023-09/music-theory-syllabus-outline-grades-1-5-from-2020.pdf",
+      "metadata_source_version": "from 2020",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "SB-G1-NOTES",
@@ -109,7 +149,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.sharonbill.com/resources/ABRSM-Music-Theory-Grade-1-by-Sharon-Bill-A4.pdf",
+      "metadata_source_version": "A4; publication year unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "SB-G2-NOTES",
@@ -119,7 +163,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.sharonbill.com/resources/ABRSM-Music-Theory-Grade-2-by-Sharon-Bill-A4.pdf",
+      "metadata_source_version": "A4; publication year unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "SB-G3-NOTES",
@@ -129,7 +177,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.sharonbill.com/resources/ABRSM-Music-Theory-Grade-3-by-Sharon-Bill-A4.pdf",
+      "metadata_source_version": "A4; publication year unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "SB-G4-NOTES",
@@ -139,7 +191,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.sharonbill.com/resources/ABRSM-Music-Theory-Grade-4-by-Sharon-Bill-A4.pdf",
+      "metadata_source_version": "A4; publication year unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "SB-G5-NOTES",
@@ -149,7 +205,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.sharonbill.com/resources/ABRSM-Music-Theory-Grade-5-by-Sharon-Bill-A4.pdf",
+      "metadata_source_version": "A4; publication year unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "BLITZ-G1-2018-MOCK",
@@ -159,7 +219,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "pdf_identity_verified",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://blitzbooks.com/wp-content/uploads/2019/07/ABT1TP-uncompleted-2018-edition.pdf",
+      "metadata_source_version": "2018 edition",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "public_link_not_a_grant"
     },
     {
       "resource_id": "ABRSM-G1-2025-PRACTICE-Q",
@@ -169,7 +233,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025/products/music-theory-practice-papers-2025-abrsm-grade-1",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G1-2025-PRACTICE-A",
@@ -179,7 +247,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G2-2025-PRACTICE-Q",
@@ -189,7 +261,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G2-2025-PRACTICE-A",
@@ -199,7 +275,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G3-2025-PRACTICE-Q",
@@ -209,7 +289,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G3-2025-PRACTICE-A",
@@ -219,7 +303,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G4-2025-PRACTICE-Q",
@@ -229,7 +317,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G4-2025-PRACTICE-A",
@@ -239,7 +331,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G5-2025-PRACTICE-Q",
@@ -249,7 +345,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G5-2025-PRACTICE-A",
@@ -259,7 +359,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G6-2025-PRACTICE-Q",
@@ -269,7 +373,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G6-2025-PRACTICE-A",
@@ -279,7 +387,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G7-2025-PRACTICE-Q",
@@ -289,7 +401,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G7-2025-PRACTICE-A",
@@ -299,7 +415,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G8-2025-PRACTICE-Q",
@@ -309,7 +429,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-G8-2025-PRACTICE-A",
@@ -319,7 +443,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory-practice-papers-2025",
+      "metadata_source_version": "2025 collection; impression unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G1-PDF-V6",
@@ -329,7 +457,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v6; updated 2025-08-06",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G2-PDF-V8",
@@ -339,7 +471,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v8; updated 2025-02-22",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G3-PDF-V3",
@@ -349,7 +485,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v3; updated 2024-10-29",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G4-PDF-V8",
@@ -359,7 +499,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v8; updated 2025-08-06",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G5-PDF-V8",
@@ -369,7 +513,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v8; updated 2025-08-06",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G6-PDF-V11",
@@ -379,7 +527,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v11; updated 2025-08-06",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G7-PDF-V7",
@@ -389,7 +541,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v7; updated 2026-07-15",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G8-PDF-V4",
@@ -399,7 +555,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "catalogue_metadata_verified_not_acquired",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "v4; updated 2025-03-18",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-TW",
@@ -409,7 +569,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.com.tw/theory_examinfo.html",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-SHOP",
@@ -419,7 +583,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://shop.abrsm.org/collections/music-theory",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-ABOUT",
@@ -429,7 +597,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "search_index_only_http403",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.org/en-us/music-theory/about-music-theory",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-REG",
@@ -439,7 +611,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "search_index_only_http403",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.org/en-gb/about-our-exams/exam-regulations",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-RIGHTS",
@@ -449,7 +625,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "search_index_only_http403",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.org/en-my/more-information/licensing",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "ABRSM-ERRATA",
@@ -459,7 +639,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "search_index_only_http403",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://www.abrsm.org/en-gb/syllabuses",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "BLITZ-TERMS",
@@ -469,7 +653,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://blitzbooks.com/terms/",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-VERSIONS",
@@ -479,7 +667,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/pdf-and-book-versions/",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-REVISION",
@@ -489,7 +681,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "index_read_full_not_retrieved",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/2023/10/29/new-pdfs-and-video-courses/",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-G6",
@@ -499,7 +695,11 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/exam-boards/abrsm/abrsm-grade-6-music-theory/",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     },
     {
       "resource_id": "MMT-COMPOSE",
@@ -509,7 +709,12 @@
       "rights_status": "未確認可再散布；僅作來源研究",
       "evidence_state": "read",
       "processing_permission": "pending_scope_confirmation",
-      "sha256": null
+      "sha256": null,
+      "source_url": "https://mymusictheory.com/composition/composition-questions-abrsm-grade-6/",
+      "metadata_source_version": "unknown",
+      "metadata_accessed_date": "2026-10-01",
+      "download_kind": "catalogue_page_not_pdf_bytes"
     }
-  ]
+  ],
+  "catalogue_revision": "2026-10-02.v2-additive-source-locations"
 }

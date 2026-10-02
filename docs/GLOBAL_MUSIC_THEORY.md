@@ -1,4 +1,4 @@
-# Global Music Theory Super Skill — implementation v0.1.0
+# Global Music Theory Super Skill — implementation v0.2.0
 
 This is an additive, independently installed Tutor Framework entry point, not a replacement for Caplin Tutor or a second Learning Pack/parser stack. The release is a bounded working pilot. Live ABRSM ingestion and expert acceptance remain blocked as described below; a green test suite is not an assertion of universal music-theory expertise.
 
@@ -59,3 +59,53 @@ During this implementation, a prior non-ABRSM MinerU result replayed successfull
 Remaining acceptance gates: authorized live ABRSM documents and provider access; the missing/mislinked Grade 3 sample key; complete Grade 6–8 source-bound blueprints and open-response marking; expert review of notation/cadence interpretations and estimated practice difficulty; broader traditions/languages and specialist-answer benchmark adjudication. Large or irregular question layouts may still require manual structured review. The local bank is intended for controlled single-writer CLI use, not an unreviewed multi-user web service.
 
 Raw research, private book/course references, frozen local Caplin data, licensed PDFs and private learner data are excluded from the public branch. Machine-specific preservation hashes, command logs, source-availability counts, manual-inspection records and installation receipts remain in the owner's private implementation receipt directory.
+
+
+## v0.2 continuation: executable analytical work
+
+The continuation retains the v0.1 source/rights gates while adding six concrete operations: interval number/quality/direction; correctly spelled major and named minor scales; complete spelled triads/seventh-chord roots and inversions; fixed/movable-do with explicit minor basis; simple/compound/irregular meter groups; and bounded similar-motion perfect-interval checks across named voices. A separate existing music21 environment was used for independent interval comparisons; these are software cross-checks, not human expert approval.
+
+Scale register convention: the supplied tonic is the lower endpoint of the one-octave range. Descending output starts at its octave and ends on the supplied lower tonic. Classical melodic minor descends in its natural form; a jazz/pop context does not silently inherit that rule and is held for explicit convention review. Fixed-do outputs written accidental information rather than disguising an altered note. Parallel-motion checks use written interval quality as well as semitone distance, so an enharmonic augmented fourth is not mislabeled a perfect fifth.
+
+New commands:
+
+```sh
+global-music-theory theory --request operation.json --context context.json
+global-music-theory analyze-score --score original.musicxml --source-id my-score
+global-music-theory compare-curricula ABRSM-G1 ABRSM-G2
+global-music-theory reconcile --request competing-claims.json
+global-music-theory open-practice --topic composition --seed 17 --student-only
+global-music-theory check-open --request learner-response.json
+```
+
+Example operation objects:
+
+```json
+{"operation":"interval","first":"C4","second":"Eb4","source_id":"user-question"}
+{"operation":"scale","tonic":"F#4","mode":"major"}
+{"operation":"chord","notes":["B3","D4","F4","G4"]}
+{"operation":"meter","numerator":5,"denominator":8,"groups":[2,3]}
+{"operation":"solfege","system":"movable_do","tonic":"A3","mode":"natural_minor","minor_basis":"la","notes":["A3","C4","E4"]}
+```
+
+A score analysis preserves each source event ID, original measure and voice, local and absolute onset, written pitch and sounding MIDI. It does not fabricate a PDF crop or claim an OMR result. A lecture/score conflict retains both source records and returns review-required rather than silently preferring whichever source seems more authoritative. Curriculum switching computes explicitly evidenced competency overlap and missing/unconfirmed areas.
+
+Open-response practice now supports voice-leading revision, original composition continuation and comparison of formal interpretations. Each uses five separate student/key/solution/rubric/map artifacts. The example response is one system-created possibility, not an official key. Reviewer-supplied partial-credit awards remain labeled as caller-supplied reviewer results, and free responses are never assigned invented grades. Requested ABRSM Grade 6–8 context stays alignment-review-required until a verified blueprint is available.
+
+The catalogue's 51 historical resource entries now include their exact known source URLs without promoting permissions or inventing checksums. In this continuation, ten exact public sample/syllabus downloads were attempted from the Mac and all returned HTTP 403. No credentials were retrieved through an alternate path, no protected file was acquired, and no new MinerU job was submitted. Original documents and approved provider access therefore remain genuine external acceptance blockers.
+
+### Primary references for bounded calculations
+
+Definitions were checked against the author-published Music Theory for the 21st-Century Classroom, sections 3.1, 4.4, 5.1, 8.1 and 26.3, and Open Music Theory's major/minor scale and solfege chapters. The code and exercises are independently authored; source exercises, diagrams and textbook content are not bundled.
+
+- https://musictheory.pugetsound.edu/mt21c/IntervalsIntroduction.html
+- https://musictheory.pugetsound.edu/mt21c/MinorScales.html
+- https://musictheory.pugetsound.edu/mt21c/meter.html
+- https://musictheory.pugetsound.edu/mt21c/SeventhChordsIntroduction.html
+- https://musictheory.pugetsound.edu/mt21c/ObjectionableParallels.html
+- https://viva.pressbooks.pub/openmusictheory/chapter/major-scales/
+- https://viva.pressbooks.pub/openmusictheory/chapter/minor-scales/
+
+### v0.2 review hardening
+
+Written-notation revisions are distinct from the shared sounding-event revision. Event claim IDs include the notation revision, so enharmonic respelling cannot reuse the same written-pitch claim. Automatic melodic intervals are restricted to unambiguous monophonic attacks: chord members, rests, overlapping events and tie continuations are not selected as new melody notes. A pitch outside the optional interval-operation scope preserves the exact score events and produces an explicit warning. No-save travels with each original open-practice artifact and cannot be accidentally dropped at a later export call. Student-only export creates no teacher answer files.
