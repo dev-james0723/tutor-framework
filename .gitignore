@@ -4,6 +4,23 @@
 /.codex/
 __pycache__/
 *.py[cod]
+/.venv/
+node_modules/
+.next/
+*.tsbuildinfo
+.env*
+!.env.example
+test-results/
+playwright-report/
+/.superpowers/
+*.egg-info/
 
 # Private lesson media and execution evidence
 /artifacts/
+/.claude/settings.local.json
+
+/skills/global-music-theory-super-skill/caplin-baseline
+
+# Local Token Pilot enrollment instructions
+/AGENTS.md
+/CLAUDE.md
