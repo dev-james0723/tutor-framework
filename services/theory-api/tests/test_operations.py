@@ -1,6 +1,7 @@
 import base64
 import io
 import json
+import struct
 import zipfile
 import pytest
 
@@ -79,6 +80,65 @@ def test_score_preserves_event_identity_and_renders_portable_svg(client):
 def test_unsafe_or_unsupported_scores_are_rejected(client,filename,data):
     response=client.post('/v1/score/analyze',json={'filename':filename,'data_base64':base64.b64encode(data).decode(),'source_id':'test-score'})
     assert response.status_code==422
+
+@pytest.mark.parametrize('encoding', ['utf-16-le', 'utf-16-be'])
+def test_entity_input_is_rejected_before_existing_parser(client, monkeypatch, encoding):
+    from theory_api import engine
+    calls = []
+    original = engine.analyze_score
+    def track_parser(*args, **kwargs):
+        calls.append(args[0])
+        return original(*args, **kwargs)
+    monkeypatch.setattr(engine, 'analyze_score', track_parser)
+    xml = ('<?xml version="1.0" encoding="UTF-16"?>'
+           '<!DOCTYPE score-partwise [<!ENTITY test "C">]>'
+           + SCORE.decode().replace('<step>C</step>', '<step>&test;</step>'))
+    bom = b'\xff\xfe' if encoding == 'utf-16-le' else b'\xfe\xff'
+    data = bom + xml.encode(encoding)
+    response = client.post('/v1/score/analyze', json={
+        'filename':'unsafe.musicxml', 'data_base64':base64.b64encode(data).decode(),
+        'source_id':'synthetic-entity',
+    })
+    assert response.status_code == 422
+    assert response.json()['detail']['code'] == 'invalid_input'
+    assert calls == [], 'Rejected XML must never reach the existing byte-screening parser'
+
+def test_standard_musicxml_metadata_doctype_remains_supported(client):
+    declaration = b'<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">'
+    response = client.post('/v1/score/analyze', json={
+        'filename':'standard.musicxml', 'data_base64':base64.b64encode(declaration + SCORE).decode(),
+        'source_id':'synthetic-standard',
+    })
+    assert response.status_code == 200, response.text
+    assert response.json()['payload']['events'][0]['written_pitch'] == 'C4'
+
+def test_zero_denominator_timing_has_structured_invalid_input(client):
+    data = SCORE.replace(b'<divisions>1</divisions>', b'<divisions>1/0</divisions>')
+    response = client.post('/v1/score/analyze', json={
+        'filename':'invalid-timing.musicxml', 'data_base64':base64.b64encode(data).decode(),
+        'source_id':'synthetic-invalid-timing',
+    })
+    assert response.status_code == 422
+    assert response.json()['detail']['code'] == 'invalid_input'
+    assert response.json()['detail']['request_id']
+    assert len(response.json()['detail']['message']) <= 300
+
+def test_unsupported_mxl_compression_has_structured_invalid_input(client):
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, 'w') as archive:
+        archive.writestr('META-INF/container.xml', '<container><rootfiles><rootfile full-path="score.musicxml"/></rootfiles></container>')
+        archive.writestr('score.musicxml', SCORE)
+    data = bytearray(buffer.getvalue())
+    # Preserve a valid archive structure while changing the first entry's compression method.
+    struct.pack_into('<H', data, data.index(b'PK\x03\x04') + 8, 99)
+    struct.pack_into('<H', data, data.index(b'PK\x01\x02') + 10, 99)
+    response = client.post('/v1/score/analyze', json={
+        'filename':'unsupported-compression.mxl', 'data_base64':base64.b64encode(data).decode(),
+        'source_id':'synthetic-unsupported-compression',
+    })
+    assert response.status_code == 422
+    assert response.json()['detail']['code'] == 'invalid_input'
+    assert response.json()['detail']['request_id']
 
 def test_mxl_uses_bounded_container_path(client):
     buffer=io.BytesIO()

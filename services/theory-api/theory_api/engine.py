@@ -5,6 +5,7 @@ import io
 import re
 import stat
 import zipfile
+import zlib
 from importlib.resources import files
 from pathlib import PurePosixPath
 from xml.etree import ElementTree as ET
@@ -47,6 +48,8 @@ def decode_score(filename, data):
                 raise ValueError("MXL archive exceeds processing limit")
             names = set()
             for entry in entries:
+                if entry.compress_type not in {zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED}:
+                    raise ValueError("Unsupported MXL compression method")
                 path = PurePosixPath(entry.filename)
                 if path.is_absolute() or ".." in path.parts or "\\" in entry.filename or stat.S_ISLNK(entry.external_attr >> 16):
                     raise ValueError("Unsafe MXL archive path")
@@ -61,7 +64,7 @@ def decode_score(filename, data):
             if name not in names or PurePosixPath(name).suffix.lower() not in {".xml", ".musicxml"}:
                 raise ValueError("MXL root is missing or unsupported")
             return archive.read(name)
-    except (zipfile.BadZipFile, KeyError, ET.ParseError) as error:
+    except (zipfile.BadZipFile, KeyError, ET.ParseError, NotImplementedError, RuntimeError, zlib.error) as error:
         raise ValueError("Invalid MXL container") from error
 
 def sanitize_svg(svg):
@@ -82,12 +85,18 @@ def sanitize_svg(svg):
 
 def score(request):
     raw = decode_score(request.filename, request.data_base64)
-    result = analyze_score(raw, source_id=request.source_id, context=learner_context(request.context))
-    if result.get("event_count",0) > 2000:
-        raise ValueError("This score exceeds the 2000-event MVP processing limit")
-    # The existing parser has already validated DOCTYPE/entities. Remove only its allowed standard declaration.
+    # Preflight before the original byte-screening parser. Defusedxml recognizes
+    # encodings, so UTF-16 DTDs/entities cannot bypass this service boundary.
+    # Only the engine's supported metadata-only declaration may be removed;
+    # internal subsets and every other DTD remain forbidden. Nothing is fetched.
     normalized = re.sub(rb'<!DOCTYPE\s+score-partwise\s+PUBLIC\s+"[^"<>\[\]]*"\s+"[^"<>\[\]]*"\s*>',b'',raw)
     root = safe_xml(normalized, forbid_dtd=True)
+    try:
+        result = analyze_score(raw, source_id=request.source_id, context=learner_context(request.context))
+    except ZeroDivisionError as error:
+        raise ValueError("Invalid score timing fraction") from error
+    if result.get("event_count",0) > 2000:
+        raise ValueError("This score exceeds the 2000-event MVP processing limit")
     notes = [node for node in root.iter() if node.tag.rsplit("}",1)[-1] == "note"]
     for note,event in zip(notes,result["events"],strict=True):
         note.set("id",event["event_id"])
