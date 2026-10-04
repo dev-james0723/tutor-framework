@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "execution_state": "verified_foundation_checkpoint_mvp_blocked",
+  "generated_at": "2026-10-04T01:06:14.627263+00:00",
+  "source_commit": "394c1b7d9d3ca1edd68dd821e209866e3e883792",
+  "canonical_commit": "b13eeedd9765f00a15c06f35852382989abea279",
+  "branch": "feat/super-theory-tutor-mvp-20261003",
+  "completed_tasks": [
+    1,
+    2,
+    3
+  ],
+  "pending_tasks": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "checks": [
+    {
+      "id": "python-regression",
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v",
+      "status": "passed",
+      "summary": "322 tests; OK; 1 inherited skip",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-unittest.log",
+      "sha256": "652cb37e332117b0ada184d85884f9afcb95b4420d5dd858a02bd1d9878afd38"
+    },
+    {
+      "id": "global-engine-gate",
+      "command": "env PYTHONPATH=src .venv/bin/python tools/global_music_theory_gate.py",
+      "status": "passed",
+      "summary": "passed; all three subprocess gates exit 0",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-engine-gate.log",
+      "sha256": "87056fe462193e633535552bcee89c57346d65bdecaa7e40d00e78e69dd1e370"
+    },
+    {
+      "id": "theory-api",
+      "command": "env PYTHONPATH=src:services/theory-api .venv/bin/python -m pytest services/theory-api/tests -q",
+      "status": "passed",
+      "summary": "42 passed; one Starlette TestClient deprecation warning; source identical to frozen commit",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/review-fixes-green.log",
+      "sha256": "b53413034ec030eeb170ca54e1db0f50f8d232f867cdef11dfc96de621461e0d"
+    },
+    {
+      "id": "web-postgres",
+      "command": "env TEST_DATABASE_URL=postgresql://postgres@127.0.0.1:55437/super_theory_test pnpm --filter @super-theory/web test",
+      "status": "passed",
+      "summary": "37 passed: shell 1, region 25, actual PostgreSQL integration 11",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-web-tests.log",
+      "sha256": "a5c3040e05cb08025de6c489c11bf44e1d24a9763543a0839ad9180136b87743"
+    },
+    {
+      "id": "web-typecheck",
+      "command": "pnpm --filter @super-theory/web typecheck",
+      "status": "passed",
+      "summary": "exit 0",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-web-typecheck.log",
+      "sha256": "f8284e0dc3a4c3eb9bcad2b1a32dfdd120bd93be58a688a6c4d69118c967fa11"
+    },
+    {
+      "id": "web-lint",
+      "command": "pnpm --filter @super-theory/web lint",
+      "status": "passed",
+      "summary": "exit 0",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-web-lint.log",
+      "sha256": "11ab6ae9ba294dbe08a2067557658c2dce32a70ab1b5d759d6306654ffb1c710"
+    },
+    {
+      "id": "web-build",
+      "command": "pnpm --filter @super-theory/web build",
+      "status": "passed",
+      "summary": "exit 0; only / and /_not-found exist",
+      "raw_log": ".superpowers/sdd/2026-10-03-super-theory-tutor-client/frozen-web-build.log",
+      "sha256": "c4bbc5316ae56ef5f2bb539b24a01b25f686ae0d8fdf0468b7e32e48d5649116"
+    }
+  ],
+  "acceptance": [
+    {
+      "area": "Source preservation",
+      "status": "passed",
+      "reason": "Frozen checkpoint full unittest and existing Global Music Theory release gate passed; original engine and dirty checkout unchanged."
+    },
+    {
+      "area": "Account",
+      "status": "validation_unavailable",
+      "reason": "Account lifecycle not implemented; approved regional database/email bindings and real test mailbox unavailable."
+    },
+    {
+      "area": "Region",
+      "status": "validation_unavailable",
+      "reason": "25 regional policy tests and real PostgreSQL realm tests passed; authenticated-user lifecycle and browser evidence pending."
+    },
+    {
+      "area": "CN isolation",
+      "status": "validation_unavailable",
+      "reason": "CN resource policy unit tests passed; actual model router, provider failure injection and regional request logs not implemented."
+    },
+    {
+      "area": "Onboarding",
+      "status": "validation_unavailable",
+      "reason": "Task 4 UI and live account prerequisites pending."
+    },
+    {
+      "area": "i18n",
+      "status": "validation_unavailable",
+      "reason": "Three-locale client implementation and locale sweep pending Task 11."
+    },
+    {
+      "area": "Tutor Explain",
+      "status": "validation_unavailable",
+      "reason": "Deterministic engine API passes; orchestration and browser learning flow pending Tasks 6–7."
+    },
+    {
+      "area": "Tutor Practice",
+      "status": "validation_unavailable",
+      "reason": "Original student projection and API feedback tested; persisted session/UI sequence pending Task 8."
+    },
+    {
+      "area": "Tutor Check",
+      "status": "validation_unavailable",
+      "reason": "API student projection/hint withholding tested; pre-submit DOM/stream/accessibility and DB enforcement pending Task 8."
+    },
+    {
+      "area": "Tutor Deep",
+      "status": "validation_unavailable",
+      "reason": "Source/uncertainty/competing-interpretation client flow pending Tasks 6–7."
+    },
+    {
+      "area": "Structured rendering",
+      "status": "validation_unavailable",
+      "reason": "Shared TutorResponse validation and block renderer pending Tasks 6–7."
+    },
+    {
+      "area": "MusicXML",
+      "status": "validation_unavailable",
+      "reason": "Real synthetic MusicXML/MXL parse/render/event IDs tested at API boundary; storage/upload/selection/browser follow-up pending Task 9."
+    },
+    {
+      "area": "Unsupported score",
+      "status": "validation_unavailable",
+      "reason": "API rejects PDF/image/XXE/malformed input; recoverable upload UI E2E pending Task 9."
+    },
+    {
+      "area": "Persistence",
+      "status": "validation_unavailable",
+      "reason": "Real PostgreSQL migration/cascade/ownership tests passed; logout-login and application persistence flows pending."
+    },
+    {
+      "area": "Evidence model",
+      "status": "validation_unavailable",
+      "reason": "Four permitted states, append-only attempts and ownership tested in PostgreSQL; evidence-transition service/UI pending Task 8."
+    },
+    {
+      "area": "Account export/delete",
+      "status": "validation_unavailable",
+      "reason": "Relational cascade tested; account export/deletion orchestration and private object cleanup pending Task 10."
+    },
+    {
+      "area": "Security",
+      "status": "validation_unavailable",
+      "reason": "Internal API token/realm/input limits tested; public account/session/object checks and full static/runtime review pending."
+    },
+    {
+      "area": "Rate/cost",
+      "status": "validation_unavailable",
+      "reason": "Production request, concurrency and daily-budget controls pending Task 12."
+    },
+    {
+      "area": "Provider outage",
+      "status": "validation_unavailable",
+      "reason": "No real provider configured; provider router and recovery E2E pending Tasks 5/12."
+    },
+    {
+      "area": "Theory outage",
+      "status": "validation_unavailable",
+      "reason": "Orchestration/failure recovery pending Tasks 6/12; no BFF fallback path exists yet."
+    },
+    {
+      "area": "Accessibility",
+      "status": "validation_unavailable",
+      "reason": "Product surfaces and critical keyboard/focus/contrast/reduced-motion checks pending Tasks 7–11."
+    },
+    {
+      "area": "Zoom/width",
+      "status": "validation_unavailable",
+      "reason": "Product critical-path 320px/200%-zoom browser checks unavailable; UI not implemented."
+    },
+    {
+      "area": "Responsive",
+      "status": "validation_unavailable",
+      "reason": "Required four product screenshot/interaction captures not run; only initial app shell exists."
+    },
+    {
+      "area": "Safari class",
+      "status": "validation_unavailable",
+      "reason": "Playwright WebKit product critical path not implemented or run."
+    },
+    {
+      "area": "Visual QA",
+      "status": "validation_unavailable",
+      "reason": "Product loading/empty/error states and screenshots unavailable."
+    },
+    {
+      "area": "Runtime health",
+      "status": "validation_unavailable",
+      "reason": "No product browser/staging/production critical path exists to inspect."
+    },
+    {
+      "area": "Observability",
+      "status": "validation_unavailable",
+      "reason": "Web/theory/provider request correlation and redacted production logs pending Task 12."
+    },
+    {
+      "area": "Performance",
+      "status": "validation_unavailable",
+      "reason": "Shell renders without network/model in unit test; production latency measurements unavailable."
+    },
+    {
+      "area": "Rollback",
+      "status": "validation_unavailable",
+      "reason": "Disposable SQL migration up/down/up passed; production rollback/package exercise pending Task 13."
+    },
+    {
+      "area": "Production",
+      "status": "validation_unavailable",
+      "reason": "No staging or production artifact deployed; product Tasks 4–13 incomplete and approved target/resources unavailable."
+    },
+    {
+      "area": "CN launch",
+      "status": "validation_unavailable",
+      "reason": "Actual CN domain/deployment identity and ICP/PSB/generative-AI/privacy review evidence unavailable; public launch not verified."
+    }
+  ],
+  "critical_paths": [
+    {
+      "script": "New Global user: sign up -> verify -> onboarding -> Explain -> Practice -> logout -> login -> history.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "New CN user: sign up -> verify -> onboarding -> Explain, while capturing provider-region evidence.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Check-mode item: prove answer/hint is unavailable before submission.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Score: upload a known MusicXML fixture -> render -> select context -> ask a grounded question.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Failure: disable model provider -> recoverable UI.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Failure: break Theory API -> no fabricated deterministic answer.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Accessibility: keyboard-only from sign-in through first practice completion.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    },
+    {
+      "script": "Mobile: run 390x844 and 430x932 with virtual-keyboard/composer interaction where tooling permits.",
+      "status": "validation_unavailable",
+      "reason": "Complete product routes and authenticated regional integrations are not implemented/configured."
+    }
+  ],
+  "preservation": {
+    "root_head": "b13eeedd9765f00a15c06f35852382989abea279",
+    "root_branch": "feat/global-music-theory-super-skill-20261002",
+    "preserved_untracked_files": 36,
+    "changed_original_files": [],
+    "added_untracked_files": [],
+    "missing_untracked_files": [],
+    "tracked_engine_changes": []
+  },
+  "blockers": [
+    "Approved Global Singapore and CN Beijing PostgreSQL, private object storage, Theory API host, Model Studio and transactional-email resource bindings/secret-store references not supplied.",
+    "Approved deployment target/domain, real test mailbox and bounded provider/provisioning spend authorization not supplied. Existing credentials do not authorize additional paid resources or unspecified emails.",
+    "Tasks 4–14 remain incomplete. This is a foundation checkpoint, not an MVP release candidate.",
+    "CN public launch compliance evidence has not been supplied or verified for an actual deployment."
+  ]
+}
