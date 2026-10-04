@@ -14,15 +14,14 @@ from tutor_framework.domains.music.global_theory.operations import evaluate
 from tutor_framework.domains.music.global_theory.score_workflow import analyze_score, compare_curricula, reconcile_claims
 from tutor_framework.domains.music.global_theory.mini_exam import build_mini_exam, solve_item
 from tutor_framework.domains.music.global_theory.open_practice import build_open_practice, assess_open_response
+from .schemas import TheoryContext
 
 MAX_SCORE_BYTES = 2_000_000
 OPEN_TOPICS = {"composition", "voice_leading", "form_comparison"}
 SAFE_SVG_TAGS = {"svg","g","path","defs","symbol","use","text","tspan","rect","line","polyline","circle","ellipse","polygon","title","desc","style"}
 
 def learner_context(values):
-    if set(values) - set(LearnerContext.__dataclass_fields__):
-        raise ValueError("Unknown theory context field")
-    return LearnerContext(**values)
+    return LearnerContext(**TheoryContext.model_validate(values).model_dump())
 
 def operation(name, request):
     if "operation" in request.inputs:

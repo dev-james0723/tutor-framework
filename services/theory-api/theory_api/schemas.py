@@ -5,6 +5,19 @@ from pydantic import BaseModel, ConfigDict, Field
 class StrictRequest(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
 
+class TheoryContext(StrictRequest):
+    response_language: Literal['en','zh-Hant','bilingual'] = 'en'
+    terminology_preference: dict[str,str] = Field(default_factory=dict,max_length=32)
+    curriculum_context: dict[str,str] = Field(default_factory=dict,max_length=32)
+    target_level_or_competencies: list[str] = Field(default_factory=list,max_length=32)
+    musical_tradition: str = Field(default='unknown',max_length=200)
+    analysis_framework: str = Field(default='unknown',max_length=200)
+    notation_and_solfege_system: dict[str,str] = Field(default_factory=dict,max_length=32)
+    learning_goal: str = Field(default='unknown',max_length=200)
+    desired_deliverables: list[str] = Field(default_factory=list,max_length=32)
+    no_save: bool = False
+    text_only: bool = False
+
 class OperationRequest(StrictRequest):
     inputs: dict[str, Any]
     context: dict[str, Any] = Field(default_factory=dict)

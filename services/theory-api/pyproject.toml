@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "super-theory-api"
 version = "0.1.0"
 requires-python = ">=3.11"
-dependencies = ["fastapi==0.142.2", "uvicorn==0.54.0", "defusedxml==0.7.1", "verovio==6.3.0"]
+dependencies = ["tutor-framework==0.3.0", "fastapi==0.142.2", "uvicorn==0.54.0", "defusedxml==0.7.1", "verovio==6.3.0"]
 
 [project.optional-dependencies]
 test = ["pytest==9.1.1", "httpx==0.28.1"]

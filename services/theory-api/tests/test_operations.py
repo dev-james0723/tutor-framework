@@ -58,6 +58,10 @@ def test_unknown_operation_is_explicitly_unsupported(client):
 def test_unknown_preferences_are_rejected(client):
     assert client.post('/v1/theory/interval',json={'inputs':{'first':'C4','second':'E4'},'context':{'nationality':'CN'}}).status_code==422
 
+def test_malformed_tradition_is_rejected_without_runtime_exception(client):
+    response=client.post('/v1/theory/scale',json={'inputs':{'tonic':'A3','mode':'melodic_minor','direction':'descending'},'context':{'musical_tradition':['jazz']}})
+    assert response.status_code==422
+
 def test_score_preserves_event_identity_and_renders_portable_svg(client):
     response=client.post('/v1/score/analyze',json={'filename':'study.musicxml','data_base64':base64.b64encode(SCORE).decode(),'source_id':'test-score'})
     assert response.status_code==200,response.text
