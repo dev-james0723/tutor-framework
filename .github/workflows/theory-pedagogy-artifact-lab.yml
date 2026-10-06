@@ -31,5 +31,11 @@ jobs:
           cache: pip
       - name: Install test dependencies
         run: python -m pip install -e ".[test]"
-      - name: Run artifact-lab unit tests
-        run: >-\n          python -m pytest\n          tests/unit/test_theory_pedagogy_artifacts.py\n          tests/unit/test_global_score_workflow.py\n          tests/unit/test_music_audio.py\n          tests/unit/test_lesson_examples.py\n          -q
+      - name: Run artifact-lab regression suite
+        run: >-
+          python -m pytest
+          tests/unit/test_theory_pedagogy_artifacts.py
+          tests/unit/test_global_score_workflow.py
+          tests/unit/test_music_audio.py
+          tests/unit/test_lesson_examples.py
+          -q
