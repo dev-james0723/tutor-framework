@@ -11,6 +11,7 @@ from tutor_framework.domains.music.theory_pedagogy import (
     read_score_source,
     write_contrast_package,
 )
+from tutor_framework.domains.music.theory_pedagogy.cli import doctor, generate_example
 
 
 class TheoryPedagogyArtifactTests(unittest.TestCase):
@@ -170,6 +171,24 @@ class TheoryPedagogyArtifactTests(unittest.TestCase):
         self.assertFalse(mapped["policy"]["semantic_identity_is_verified"])
         self.assertFalse(mapped["policy"]["amt_is_verified_score"])
         self.assertFalse(mapped["policy"]["weak_alignment_creates_measure_mapping"])
+
+    def test_shared_cli_doctor_keeps_privacy_defaults(self):
+        result = doctor()
+        self.assertTrue(result["framework"]["available"])
+        self.assertFalse(result["policy"]["external_audio_transfer_default"])
+        self.assertTrue(result["policy"]["printed_score_requires_omr_review"])
+        self.assertFalse(result["policy"]["generated_examples_are_course_evidence"])
+
+    def test_shared_cli_generates_a_real_package_without_local_media_tools(self):
+        with tempfile.TemporaryDirectory() as root:
+            destination = Path(root) / "cli-pack"
+            result = generate_example("triad inversions", destination, render=False)
+            self.assertEqual(result["state"], "generated_review_required")
+            self.assertTrue((destination / "manifest.json").is_file())
+            self.assertEqual(len(result["manifest"]["variants"]), 3)
+            self.assertTrue(
+                all(Path(item["musicxml"]).is_file() for item in result["manifest"]["variants"])
+            )
 
 
 if __name__ == "__main__":
