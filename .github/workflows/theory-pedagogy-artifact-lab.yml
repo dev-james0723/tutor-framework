@@ -1,0 +1,35 @@
+name: Theory Pedagogy Artifact Lab
+
+on:
+  push:
+    branches:
+      - feat/theory-pedagogy-artifact-lab-20261006
+    paths:
+      - "src/tutor_framework/domains/music/theory_pedagogy/**"
+      - "tests/unit/test_theory_pedagogy_artifacts.py"
+      - ".github/workflows/theory-pedagogy-artifact-lab.yml"
+  pull_request:
+    branches:
+      - feat/global-music-theory-super-skill-20261002
+    paths:
+      - "src/tutor_framework/domains/music/theory_pedagogy/**"
+      - "tests/unit/test_theory_pedagogy_artifacts.py"
+      - ".github/workflows/theory-pedagogy-artifact-lab.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  artifact-lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install test dependencies
+        run: python -m pip install -e ".[test]"
+      - name: Run artifact-lab unit tests
+        run: python -m pytest tests/unit/test_theory_pedagogy_artifacts.py -q
