@@ -1,0 +1,88 @@
+{
+  "reviewed_on": "2026-10-01",
+  "entries": [
+    {
+      "name": "pdf",
+      "repository": "openai/skills",
+      "revision": "49f948faa9258a0c61caceaf225e179651397431",
+      "source_path": "skills/.curated/pdf/SKILL.md",
+      "source_sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+      "license": "Apache-2.0",
+      "integration": "reviewed_instruction_adapter",
+      "upstream_snapshot_included": true,
+      "runtime_installed": false,
+      "role": "Layout-aware PDF intake and export",
+      "guide": "pdf/GUIDE.md"
+    },
+    {
+      "name": "summarize-slides",
+      "repository": "li-baichuan-james/summarize-slides-skill",
+      "revision": "f4168f9bedd494c9ca27f341af14179672aef963",
+      "source_path": "SKILL.md",
+      "source_sha256": "6e7fcd13787088bd103925d5d3b39ed2984e85931a1880f22970abbdfaf2bfda",
+      "license": "MIT",
+      "integration": "reviewed_instruction_adapter",
+      "upstream_snapshot_included": true,
+      "runtime_installed": false,
+      "role": "Document segmentation and coverage",
+      "guide": "summarize-slides/GUIDE.md"
+    },
+    {
+      "name": "competency-unpacker",
+      "repository": "garethmanning/education-agent-skills",
+      "revision": "6bbbce418f82e11044009c9f3b7373a354de5bd0",
+      "source_path": "skills/curriculum-assessment/competency-unpacker/SKILL.md",
+      "source_sha256": "f7491dd4e9c38cf707067f8e4b1818069c501f39963d3628852f65bdd7031b46",
+      "license": "CC-BY-SA-4.0",
+      "integration": "reviewed_instruction_adapter",
+      "upstream_snapshot_included": true,
+      "runtime_installed": false,
+      "role": "Observable learning objectives",
+      "guide": "competency-unpacker/GUIDE.md"
+    },
+    {
+      "name": "cli-anything-musescore",
+      "repository": "hkuds/cli-anything",
+      "revision": "34f519533bc175d2fe287ab8316b0dd99bb9cc43",
+      "source_path": "skills/cli-anything-musescore/SKILL.md",
+      "source_sha256": "395623728cdd7dafc5575b67dd5219c2b44dfff7763fe75dc0c887e95146b459",
+      "license": "Apache-2.0",
+      "integration": "reviewed_instruction_adapter",
+      "upstream_snapshot_included": true,
+      "runtime_installed": false,
+      "role": "Notation-aware export reference",
+      "guide": "cli-anything-musescore/GUIDE.md"
+    },
+    {
+      "name": "mindmap",
+      "repository": "galiacheng/mindmap-skills",
+      "revision": "e6e3a9a920c6abff4b5d1861a6637a0520fa3682",
+      "source_path": "skills/mindmap/SKILL.md",
+      "source_sha256": "be981e9988bfd419804ec7b1d7b5aa445f10c3cd4182d2285388c9483b97f4ad",
+      "license": "MIT",
+      "integration": "reviewed_instruction_adapter",
+      "upstream_snapshot_included": true,
+      "runtime_installed": false,
+      "role": "Hierarchical concept/form map",
+      "guide": "mindmap/GUIDE.md"
+    },
+    {
+      "name": "educational-content-reviewer",
+      "integration": "native_equivalent_upstream_not_vendored",
+      "upstream_snapshot_included": false,
+      "runtime_installed": false,
+      "reason": "No repository reuse license was established in the reviewed source.",
+      "role": "Native source/coverage review",
+      "guide": "educational-content-reviewer/GUIDE.md"
+    },
+    {
+      "name": "study-notes-generator",
+      "integration": "native_equivalent_upstream_not_vendored",
+      "upstream_snapshot_included": false,
+      "runtime_installed": false,
+      "reason": "The previously named Smithery skill could not be resolved to a verifiable, license-cleared source.",
+      "role": "Native music-specific notes generator",
+      "guide": "study-notes-generator/GUIDE.md"
+    }
+  ]
+}
