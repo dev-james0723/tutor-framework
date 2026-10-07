@@ -53,6 +53,13 @@ class CaplinPackDeploy(unittest.TestCase):
         self.assertEqual((self.skill/'SKILL.md').read_text().count('## Learning Pack and goal setup'),1)
         self.assertEqual((self.skill/'references/teaching-video-workflow.md').read_text().count('Learning Pack selection gate'),1)
 
+    def test_deploy_preserves_virtualenv_interpreter_symlink(self):
+        bindir=self.root/'runtime/bin';bindir.mkdir(parents=True)
+        interpreter=bindir/'python';interpreter.symlink_to(Path(sys.executable))
+        self.module.deploy_installation(REPO,self.skill,interpreter,None,self.root/'backups')
+        config=json.loads((self.skill/'learning-pack-runtime.json').read_text())
+        self.assertEqual(config['python'],str(interpreter.absolute()))
+
     def test_no_second_skill_is_created(self):
         missing=self.root/'not-installed'
         with self.assertRaises(ValueError):self.module.deploy_installation(REPO,missing,Path(sys.executable),None,self.root/'backups')

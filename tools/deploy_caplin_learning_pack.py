@@ -58,7 +58,9 @@ def patch_skill(text, section, repository):
 def deploy_installation(repository, skill_root, python, export_runtime, backup_root, *, dry_run=False):
     repository=Path(repository).expanduser().resolve(strict=True)
     skill_root=Path(skill_root).expanduser().resolve()
-    python=Path(python).expanduser().resolve(strict=True)
+    python=Path(python).expanduser().absolute()
+    if not python.is_file() or not os.access(python, os.X_OK):
+        raise ValueError('configured Python interpreter is missing or not executable')
     export_runtime=Path(export_runtime).expanduser().resolve(strict=True) if export_runtime else None
     backup_root=Path(backup_root).expanduser().resolve()
     if not (skill_root/'SKILL.md').is_file():
