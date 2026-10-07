@@ -1,4 +1,5 @@
 """Exercise the deployed entrypoint, not only wording in SKILL.md."""
+import importlib.util
 import json
 import subprocess
 import sys
@@ -26,6 +27,9 @@ class InstalledLearningPack(unittest.TestCase):
         data=json.loads(result.stdout)
         self.assertIn('notes',data['capabilities'])
         self.assertFalse(data['new_video_renderer'])
+        local_pdf=importlib.util.find_spec('pymupdf') is not None or importlib.util.find_spec('fitz') is not None
+        if local_pdf:
+            self.assertTrue(data['pymupdf_available'],'installed wrapper lost the configured PDF-capable interpreter')
 
     def test_uploaded_text_produces_adaptive_questions_before_materials(self):
         with tempfile.TemporaryDirectory() as temp:

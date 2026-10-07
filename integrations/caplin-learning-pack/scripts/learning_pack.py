@@ -20,7 +20,9 @@ def main(argv=None):
         if set(config)-{'repository','python','export_runtime','release_commit'}:
             raise ValueError('unknown local runtime keys')
         repository=Path(config['repository']).expanduser().resolve(strict=True)
-        interpreter=Path(config['python']).expanduser().resolve(strict=True)
+        interpreter=Path(config['python']).expanduser().absolute()
+        if not interpreter.is_file() or not os.access(interpreter,os.X_OK):
+            raise ValueError('configured Python interpreter is missing or not executable')
         if not (repository/'src/tutor_framework/domains/music/lesson/learning_pack/__main__.py').is_file():
             raise ValueError('authoritative Learning Pack module is missing')
         export_setting=config.get('export_runtime')
