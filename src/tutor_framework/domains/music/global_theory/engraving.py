@@ -93,7 +93,15 @@ def engrave_original_score(musicxml: str, *, destination: Path | None = None,
         raise ValueError("original mini-score must produce exactly one engravable page")
     svg = _portable_svg(toolkit.renderToSVG(1))
     midi = base64.b64decode(toolkit.renderToMIDI(), validate=True)
-    expected = [{"midi": event.midi, "onset": str(event.onset)} for event in score.events]
+    # Event onsets are measure-local; convert to absolute positions (same rule as
+    # score_workflow) so scores longer than one measure validate correctly.
+    if any(event.occurrence != 1 for event in score.events):
+        raise ValueError("repeated passages are unsupported in original mini-score engraving")
+    offsets, offset = {}, 0
+    for label in score.labels:
+        offsets[label] = offset
+        offset += score.spans[label]
+    expected = [{"midi": event.midi, "onset": str(offsets[event.measure] + event.onset)} for event in score.events]
     validation = compare_midi(expected, midi_notes(midi), _declared_tempo(musicxml))
     if validation["state"] != "passed":
         raise ValueError("engraved MIDI disagrees with the independently parsed symbolic notes")

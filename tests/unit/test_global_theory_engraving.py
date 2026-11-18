@@ -47,6 +47,17 @@ class EngravingAcceptance(unittest.TestCase):
         result = engrave_original_score(original_musicxml().replace('tempo="120"', 'tempo="84"'))
         self.assertEqual(result['midi_validation']['state'], 'passed')
 
+    def test_multi_measure_scores_validate_with_absolute_onsets(self):
+        # Regression 2026-11-18: event onsets are measure-local; validation treated
+        # them as absolute, so every score longer than one measure was rejected.
+        xml = original_musicxml().replace('</measure></part>',
+            '</measure><measure number="2">' + ''.join(
+                f'<note id="m{i}"><pitch><step>{s}</step><octave>4</octave></pitch><duration>1</duration><type>quarter</type></note>'
+                for i, s in enumerate('GFED', 1)) + '</measure></part>')
+        result = engrave_original_score(xml)
+        self.assertEqual(result['symbolic_pitches'], [60, 62, 64, 60, 67, 65, 64, 62])
+        self.assertEqual(result['midi_validation']['state'], 'passed')
+
     def test_conflicting_tempi_are_rejected_not_guessed(self):
         xml = original_musicxml().replace('<direction><sound tempo="120"/></direction>',
                                           '<direction><sound tempo="120"/></direction><direction><sound tempo="60"/></direction>')
