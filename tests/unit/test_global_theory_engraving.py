@@ -41,6 +41,18 @@ class EngravingAcceptance(unittest.TestCase):
                 with self.assertRaises((ValueError, TypeError)):
                     engrave_original_score(invalid)
 
+    def test_midi_validation_uses_the_score_tempo(self):
+        # Regression 2026-11-18: the Theory Pedagogy built-in examples declare
+        # quarter = 84; validation assumed 120 and rejected correct MIDI.
+        result = engrave_original_score(original_musicxml().replace('tempo="120"', 'tempo="84"'))
+        self.assertEqual(result['midi_validation']['state'], 'passed')
+
+    def test_conflicting_tempi_are_rejected_not_guessed(self):
+        xml = original_musicxml().replace('<direction><sound tempo="120"/></direction>',
+                                          '<direction><sound tempo="120"/></direction><direction><sound tempo="60"/></direction>')
+        with self.assertRaises(ValueError):
+            engrave_original_score(xml)
+
     def test_existing_destination_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaises(ValueError):
