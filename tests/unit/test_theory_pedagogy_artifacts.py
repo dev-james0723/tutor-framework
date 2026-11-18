@@ -26,6 +26,16 @@ class TheoryPedagogyArtifactTests(unittest.TestCase):
             revisions.add(score.revision)
         self.assertEqual(len(revisions), 2)
 
+    def test_clef_key_and_time_are_written_once_per_part(self):
+        # Regression 2026-11-18: attributes were repeated in every measure, so
+        # engravers printed a clef and time signature in each bar.
+        import xml.etree.ElementTree as ET
+        for concept in ("cadence-vs-dominant-arrival", "tonicization-vs-modulation", "triad-inversions"):
+            for variant in generate_theory_contrast(concept).variants:
+                for part in ET.fromstring(variant.musicxml).iter("part"):
+                    with_attributes = [m.get("number") for m in part.iter("measure") if m.find("attributes") is not None]
+                    self.assertEqual(with_attributes, ["1"], (concept, variant.variant_id if hasattr(variant, "variant_id") else ""))
+
     def test_contrast_package_keeps_generated_material_out_of_course_evidence(self):
         contrast = generate_theory_contrast("triad inversions")
         with tempfile.TemporaryDirectory() as root:
