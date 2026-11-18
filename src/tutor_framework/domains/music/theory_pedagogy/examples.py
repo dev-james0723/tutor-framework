@@ -108,18 +108,20 @@ def build_piano_musicxml(
             if not bass:
                 raise ValueError("each bar requires at least one bass/chord pitch")
             measure = ET.SubElement(part, "measure", number=str(number))
-            attrs = ET.SubElement(measure, "attributes")
-            ET.SubElement(attrs, "divisions").text = "1"
-            key = ET.SubElement(attrs, "key")
-            ET.SubElement(key, "fifths").text = str(key_fifths)
-            time = ET.SubElement(attrs, "time")
-            ET.SubElement(time, "beats").text = "4"
-            ET.SubElement(time, "beat-type").text = "4"
-            clef = ET.SubElement(attrs, "clef")
-            ET.SubElement(clef, "sign").text = "G" if part_id == "RH" else "F"
-            ET.SubElement(clef, "line").text = "2" if part_id == "RH" else "4"
-
             if number == 1:
+                # Written once: repeating them makes engravers print a clef and
+                # time signature in every bar.
+                attrs = ET.SubElement(measure, "attributes")
+                ET.SubElement(attrs, "divisions").text = "1"
+                key = ET.SubElement(attrs, "key")
+                ET.SubElement(key, "fifths").text = str(key_fifths)
+                time = ET.SubElement(attrs, "time")
+                ET.SubElement(time, "beats").text = "4"
+                ET.SubElement(time, "beat-type").text = "4"
+                clef = ET.SubElement(attrs, "clef")
+                ET.SubElement(clef, "sign").text = "G" if part_id == "RH" else "F"
+                ET.SubElement(clef, "line").text = "2" if part_id == "RH" else "4"
+
                 direction = ET.SubElement(measure, "direction")
                 dtype = ET.SubElement(direction, "direction-type")
                 metronome = ET.SubElement(dtype, "metronome")

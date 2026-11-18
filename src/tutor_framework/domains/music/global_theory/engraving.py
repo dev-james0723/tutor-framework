@@ -42,6 +42,22 @@ def _portable_svg(svg: str) -> str:
     return ET.tostring(root, encoding='unicode')
 
 
+def _declared_tempo(musicxml: str) -> str:
+    """Return the single quarter-note tempo the score declares (MIDI default 120).
+
+    Validation compares MIDI onsets in seconds, so it must use the tempo the
+    renderer was told to play. Several distinct tempi are unsupported here.
+    """
+    import re
+    tempi = {value for value in re.findall(r'<sound\b[^>]*\btempo="([0-9]+(?:\.[0-9]+)?)"', musicxml)}
+    if len(tempi) > 1:
+        raise ValueError("original mini-score declares more than one tempo")
+    tempo = tempi.pop() if tempi else "120"
+    if float(tempo) <= 0:
+        raise ValueError("original mini-score declares an invalid tempo")
+    return tempo
+
+
 def engrave_original_score(musicxml: str, *, destination: Path | None = None,
                            title: str = "Original music-reading exercise",
                            no_save: bool = False) -> dict:
@@ -77,8 +93,16 @@ def engrave_original_score(musicxml: str, *, destination: Path | None = None,
         raise ValueError("original mini-score must produce exactly one engravable page")
     svg = _portable_svg(toolkit.renderToSVG(1))
     midi = base64.b64decode(toolkit.renderToMIDI(), validate=True)
-    expected = [{"midi": event.midi, "onset": str(event.onset)} for event in score.events]
-    validation = compare_midi(expected, midi_notes(midi), "120")
+    # Event onsets are measure-local; convert to absolute positions (same rule as
+    # score_workflow) so scores longer than one measure validate correctly.
+    if any(event.occurrence != 1 for event in score.events):
+        raise ValueError("repeated passages are unsupported in original mini-score engraving")
+    offsets, offset = {}, 0
+    for label in score.labels:
+        offsets[label] = offset
+        offset += score.spans[label]
+    expected = [{"midi": event.midi, "onset": str(offsets[event.measure] + event.onset)} for event in score.events]
+    validation = compare_midi(expected, midi_notes(midi), _declared_tempo(musicxml))
     if validation["state"] != "passed":
         raise ValueError("engraved MIDI disagrees with the independently parsed symbolic notes")
     with fitz.open(stream=svg.encode("utf-8"), filetype="svg") as vector:
